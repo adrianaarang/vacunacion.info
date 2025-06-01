@@ -61,12 +61,14 @@ require_once 'modalLogin.php'; // Solo aquí
           <li class="nav-item"><a class="nav-link" href="/TFG/index.php">Inicio</a></li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">Recursos</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/TFG/views/calculadora.php">Calculadora de dosis</a></li>
-              <li><a class="dropdown-item" href="/TFG/views/calendariosVacunacion.php">Calendarios de vacunación</a></li>
-              <li><a class="dropdown-item" href="/TFG/views/preguntasFrecuentes.php">Preguntas frecuentes</a></li>
-            </ul>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">Recursos</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="/TFG/views/calculadora.php">Calculadora de dosis</a></li>
+                  <li><a class="dropdown-item" href="/TFG/views/calendariosVacunacion.php">Calendarios de vacunación</a></li>
+                  <li><a class="dropdown-item" href="/TFG/views/preguntasFrecuentes.php">Preguntas frecuentes</a></li>
+                  <li><a class="dropdown-item" href="/TFG/views/enlaces.php">Enlaces de interés</a></li>
+
+              </ul>
           </li>
 
           <li class="nav-item"><a class="nav-link" href="/TFG/views/efectosSecundarios.php">Vacunas y efectos</a></li>

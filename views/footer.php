@@ -20,6 +20,8 @@
           <li><a href="/TFG/views/calculadora.php" class="text-white text-decoration-none">Calculadora de vacunas</a></li>
           <li><a href="/TFG/views/calendariosVacunacion.php" class="text-white text-decoration-none">Calendario de vacunación</a></li>
           <li><a href="/TFG/views/preguntasFrecuentes.php" class="text-white text-decoration-none">Preguntas frecuentes</a></li>
+          <li><a href="/TFG/views/enlaces.php" class="text-white text-decoration-none">Enlaces de interés</a></li>
+
           <li><a href="/TFG/views/about.php" class="text-white text-decoration-none">Sobre nosotros</a></li>
         </ul>
       </div>
