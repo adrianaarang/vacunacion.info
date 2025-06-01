@@ -8,16 +8,35 @@ require_once 'modalLogin.php'; // Solo aquí
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>vacunacion.info</title>
 
+  <!-- ✅ SEO -->
+  <title>Vacunacion.info – Calendario, cálculo de dosis y dudas frecuentes</title>
+  <meta name="description" content="Vacunacion.info es tu guía completa sobre vacunación infantil. Consulta calendarios por edad, calcula dosis seguras y resuelve dudas frecuentes.">
+  <meta name="keywords" content="vacunación, vacunas, calendario vacunal, niños, salud infantil, efectos secundarios, calendario por comunidades">
+  <meta name="author" content="Vacunacion.info">
+  <link rel="canonical" href="http://localhost/TFG/">
+
+  <!--  Accesibilidad y compatibilidad -->
+  <meta name="theme-color" content="#0d6efd">
+  <meta name="color-scheme" content="light">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <!-- ✅ Favicon e iconos -->
+  <link rel="icon" href="/TFG/views/bootstrap/img/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="/TFG/views/bootstrap/img/icon-192.png">
+  <link rel="manifest" href="/TFG/manifest.json">
+
+  <!-- ✅ CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- Tu CSS personalizado-->
-<link rel="stylesheet" href="/TFG/views/style.css">
+  <link rel="stylesheet" href="/TFG/views/style.css">
 </head>
+
+
 
 <body>
 <header class="container-fluid text-white">
@@ -26,19 +45,24 @@ require_once 'modalLogin.php'; // Solo aquí
     <!-- LOGO -->
     <div class="col-3">
       <a href="/TFG/index.php" class="navbar-brand">
-        <img src="/TFG/views/bootstrap/img/logo/logo6.png" alt="Logo" class="img-fluid">
+        <img src="/TFG/views/bootstrap/img/logo/logo6.webp" alt="Logo" class="img-fluid">
       </a>
     </div>
 
-    <!-- BUSCADOR -->
-    <div class="col-12 d-none d-md-flex col-lg-6 justify-content-center">
-      <form class="input-group position-relative" id="formBuscador" action="/TFG/views/efectosSecundarios.php" method="GET" autocomplete="off">
-        <input type="text" class="form-control" id="busquedaVacuna" name="vacuna" placeholder="Buscador de vacunas">
-        <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button>
-        <ul id="sugerencias" class="border rounded d-none"
-            style="position: absolute; top: 100%; left: 0; width: 100%; background: white; z-index: 1000;"></ul>
-      </form>
-    </div>
+<!-- BUSCADOR -->
+<div class="col-12 d-none d-md-flex col-lg-6 justify-content-center">
+  <form class="input-group position-relative" id="formBuscador" action="/TFG/views/efectosSecundarios.php" method="GET" autocomplete="off">
+    <input type="text" class="form-control" id="busquedaVacuna" name="vacuna" placeholder="Buscador de vacunas">
+    
+    <button type="submit" class="btn btn-primary" aria-label="Buscar vacuna">
+      <i class="fas fa-search" aria-hidden="true"></i>
+    </button>
+
+    <ul id="sugerencias" class="border rounded d-none"
+        style="position: absolute; top: 100%; left: 0; width: 100%; background: white; z-index: 1000;"></ul>
+  </form>
+</div>
+
 
     <!-- LOGIN / USUARIO -->
     <div class="col-2 text-end">
@@ -105,3 +129,5 @@ require_once 'modalLogin.php'; // Solo aquí
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    

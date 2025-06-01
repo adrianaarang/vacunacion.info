@@ -1,6 +1,5 @@
 <?php
 require_once 'header.php';
-require_once 'modalLogin.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
