@@ -28,8 +28,8 @@
       <div class="col-md-4 mb-3">
         <h5>Enlaces útiles</h5>
         <ul class="list-unstyled">
-          <li><a href="#" class="text-white text-decoration-none">Política de privacidad</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Términos de uso</a></li>
+          <li><a href="/TFG/views/privacidad.php" class="text-white text-decoration-none">Política de privacidad</a></li>
+          <li><a href="/TFG/views/cookies.php" class="text-white text-decoration-none">Cookies</a></li>
         </ul>
       </div>
     </div>
