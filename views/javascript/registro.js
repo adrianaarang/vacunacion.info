@@ -225,3 +225,27 @@ window.addEventListener("DOMContentLoaded", function () {
   email.addEventListener("input", validarEmail);
   password.addEventListener("input", validarPassword);
 });
+  // ====== CARGAR COMUNIDADES CON AJAX ======
+  const comunidadSelect = document.getElementById('comunidad_id');
+
+  if (comunidadSelect) {
+    fetch('/TFG/controllers/getComunidades.php')
+      .then(res => res.json())
+      .then(data => {
+        if (!Array.isArray(data)) throw new Error("Respuesta inesperada");
+
+        data.forEach(comunidad => {
+          const option = document.createElement('option');
+          option.value = comunidad.id;
+          option.textContent = comunidad.nombre;
+          comunidadSelect.appendChild(option);
+        });
+      })
+      .catch(error => {
+        console.error('Error al cargar comunidades:', error);
+        const option = document.createElement('option');
+        option.disabled = true;
+        option.textContent = 'Error al cargar comunidades';
+        comunidadSelect.appendChild(option);
+      });
+  }

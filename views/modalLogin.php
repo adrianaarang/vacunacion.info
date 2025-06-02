@@ -19,15 +19,14 @@
             <input type="password" id="password" name="password" required class="form-control" />
         </div>
         <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
-     
     </form>
   </div>
 </div>
 
 <!-- Modal de Registro -->
 <div class="registro-overlay" id="registroOverlay" style="display: none;">
-<div class="registro-modal shadow rounded-4 position-relative bg-white p-4"
-     style="max-width: 500px; margin: auto; max-height: 90vh; overflow-y: auto;">
+  <div class="registro-modal shadow rounded-4 position-relative bg-white p-4"
+       style="max-width: 500px; margin: auto; max-height: 90vh; overflow-y: auto;">
     <button class="btn-close position-absolute top-0 end-0 m-3" id="cerrarRegistro"></button>
     <h2 class="titulo-formulario text-center mb-4">¡Bienvenido a Vacunacion.info!</h2>
 
@@ -36,7 +35,7 @@
       <button class="btn btn-primary active">Soy nuevo</button>
     </div>
 
-  <form id="form-register" action="/TFG/controllers/procesarRegistro.php" method="POST">
+    <form id="form-register" action="/TFG/controllers/procesarRegistro.php" method="POST">
 
       <div class="mb-3">
         <label for="nombre" class="form-label">Nombre Completo</label>
@@ -51,11 +50,10 @@
       </div>
 
       <div class="mb-3">
-          <label for="passwordRegistro" class="form-label">Contraseña</label>
-          <input type="password" id="passwordRegistro" name="password" required class="form-control">
-          <div id="errorPasswordRegistro" class="invalid-feedback"></div>
+        <label for="passwordRegistro" class="form-label">Contraseña</label>
+        <input type="password" id="passwordRegistro" name="password" required class="form-control">
+        <div id="errorPasswordRegistro" class="invalid-feedback"></div>
       </div>
-
 
       <input type="hidden" name="perfil" value="madre_padre">
 
@@ -64,33 +62,22 @@
         <input type="number" id="num_hijos" name="num_hijos" min="1" required class="form-control">
         <div id="children-dates"></div>
       </div>
+
       <div class="mb-3">
-  <label for="comunidad_id" class="form-label">Comunidad Autónoma</label>
-  <select id="comunidad_id" name="comunidad_id" required class="form-select">
-    <option value="" disabled selected>Selecciona tu comunidad</option>
-    <?php
+        <label for="comunidad_id" class="form-label">Comunidad Autónoma</label>
+        <select id="comunidad_id" name="comunidad_id" required class="form-select">
+          <option value="" disabled selected>Selecciona tu comunidad</option>
+          <!-- Las opciones se cargarán con JS -->
+        </select>
+      </div>
 
-require_once __DIR__ . '/../models/BBDD.php';
-      $db = new BBDD();
-      $comunidades = $db->obtenerComunidades();
-      foreach ($comunidades as $comunidad):
-    ?>
-      <option value="<?= $comunidad['id'] ?>"><?= htmlspecialchars($comunidad['nombre']) ?></option>
-    <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL); endforeach; ?>
-  </select>
-</div>
-
-
-   <div class="form-check mb-3">
-  <input class="form-check-input" type="checkbox" id="comunicaciones" name="comunicaciones" required>
-  <label class="form-check-label" for="comunicaciones">
-    Acepto recibir comunicaciones comerciales personalizadas de Vacunacion.info.
-    <a href="/politica-privacidad" target="_blank">Ver Política de privacidad</a>
-  </label>
-</div>
-
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" id="comunicaciones" name="comunicaciones" required>
+        <label class="form-check-label" for="comunicaciones">
+          Acepto recibir comunicaciones comerciales personalizadas de Vacunacion.info.
+          <a href="/politica-privacidad" target="_blank">Ver Política de privacidad</a>
+        </label>
+      </div>
 
       <button type="submit" class="btn btn-primary w-100">Registrarse</button>
     </form>
