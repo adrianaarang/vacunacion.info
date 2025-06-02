@@ -1,5 +1,14 @@
 <?php require_once "header.php"; ?>
 
+<!-- Banner que se despliega para descargar la aplicación  -->
+
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <button id="installAppButton" class="btn btn-primary d-none ms-auto me-2">
+            <i class="bi bi-cloud-arrow-down"></i> Instalar App
+        </button>
+    </div>
+</nav>
 <!-- 🖼 Carrusel SOLO visible en md+ -->
 <div class="d-none d-md-block">
   <div id="carouselFade" class="carousel slide carousel-fade w-100" data-bs-ride="carousel">
@@ -33,34 +42,7 @@
   <img src="/TFG/views/bootstrap/img/slider/foto3.webp" class="img-fluid w-100" alt="Imagen 3">
 </div>
 
-<!-- ✅ Sección de Guía de Vacunación -->
-<section class="container-fluid my-5 px-4">
-  <h2 class="text-center mb-4">Guía de vacunación</h2>
-  <div class="row g-4 justify-content-center">
 
-    <!-- Card: Calculadora -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card text-center shadow rounded-4 h-100">
-        <div class="card-body">
-          <i class="fas fa-syringe fa-2x text-primary mb-3"></i>
-          <h5 class="card-title">Calculadora de medicación</h5>
-          <p class="card-text">Calcula dosis seguras según el peso y edad de tu hijo/a.</p>
-          <a href="/TFG/views/calculadora.php" class="btn btn-outline-primary">Ir a la calculadora</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card: Calendarios -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card text-center shadow rounded-4 h-100">
-        <div class="card-body">
-          <i class="fas fa-calendar-check fa-2x text-success mb-3"></i>
-          <h5 class="card-title">Calendarios vacunales</h5>
-          <p class="card-text">Consulta el calendario vacunal infantil oficial por edades.</p>
-          <a href="/TFG/views/calendariosVacunacion.php" class="btn btn-outline-success">Ver calendarios</a>
-        </div>
-      </div>
-    </div>
 
    <!-- ✅ Sección de Guía de Vacunación -->
 <section class="container-fluid my-5 px-4">

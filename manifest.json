@@ -1,0 +1,23 @@
+{
+  "name": "Vacunacion.info",
+  "short_name": "Vacunas",
+  "start_url": "/TFG/index.php",
+  "scope": "/TFG/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d6efd",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/TFG/views/bootstrap/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/TFG/views/bootstrap/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "lang": "es-ES"
+}

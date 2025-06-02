@@ -117,6 +117,7 @@ require_once 'modalLogin.php'; // Solo aquí
   </nav>
 </header>
 
+
     <!-- JS del buscador -->
     <script src="/TFG/views/javascript/buscadorHeader.js"></script>
     <script src="/TFG/views/javascript/slider.js"></script>

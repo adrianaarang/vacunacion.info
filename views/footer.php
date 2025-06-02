@@ -45,43 +45,10 @@
   </div>
 </footer>
 
-<!-- 📦 Registro del Service Worker -->
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/TFG/sw.js')
-        .then(reg => console.log('✅ Service Worker registrado en:', reg.scope))
-        .catch(err => console.error('❌ Error al registrar el Service Worker:', err));
-    });
-  }
-</script>
+<script src="/TFG/views/javascript/register-sw.js"></script>
+<script src="/TFG/views/javascript/install-pwa-button.js"></script>
 
-<!-- 📲 Banner de instalación PWA -->
-<div id="installBanner" class="position-fixed bottom-0 start-0 end-0 bg-primary text-white p-3 d-none" style="z-index: 9999;" role="dialog" aria-label="Instalar aplicación">
-  <div class="d-flex justify-content-between align-items-center container">
-    <span><i class="bi bi-download me-2" aria-hidden="true"></i> ¿Quieres instalar <strong>Vacunacion.info</strong> como app?</span>
-    <button class="btn btn-light text-primary" id="installBtn" aria-label="Instalar aplicación">Instalar</button>
-  </div>
-</div>
 
-<script>
-  let deferredPrompt;
-  const installBanner = document.getElementById('installBanner');
-  const installBtn = document.getElementById('installBtn');
+</body>
+</html>
 
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    installBanner.classList.remove('d-none');
-  });
-
-  installBtn.addEventListener('click', async () => {
-    installBanner.classList.add('d-none');
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
-      console.log(outcome === 'accepted' ? '✅ Usuario aceptó la instalación' : '❌ Usuario rechazó la instalación');
-      deferredPrompt = null;
-    }
-  });
-</script>
