@@ -10,7 +10,8 @@ if (
     $emailUsuario = trim($_POST["email"]);
     $passwordUsuario = trim($_POST["password"]);
 } else {
-    header("Location: ../views/home.php?login=error");
+    $_SESSION['error_login'] = "Debes introducir tu correo y contraseña.";
+    header("Location: ../views/home.php");
     exit;
 }
 
@@ -20,32 +21,25 @@ $usuario = $db->getUsuarioPorEmail($emailUsuario);
 if ($usuario) {
     $esAdmin = ($usuario["email"] === 'administrador@vacunacion.info');
 
-    // ✅ Si es admin, compara en texto plano
     if ($esAdmin && $passwordUsuario === $usuario["password"]) {
         $_SESSION["rol"] = 'admin';
-    }
-    // ✅ Si no es admin, verifica con password_hash
-    elseif (!$esAdmin && password_verify($passwordUsuario, $usuario["password"])) {
+    } elseif (!$esAdmin && password_verify($passwordUsuario, $usuario["password"])) {
         $_SESSION["rol"] = 'usuario';
-    }
-    else {
-        header("Location: ../views/home.php?login=fallido");
+    } else {
+        $_SESSION['error_login'] = "Correo o contraseña incorrectos.";
+        header("Location: ../views/home.php");
         exit;
     }
 
-    // Datos comunes para ambos
     $_SESSION["email"] = $usuario["email"];
     $_SESSION["nombre"] = $usuario["nombre"];
     $_SESSION["id"] = $usuario["id"];
 
-    // Redirección según el rol
-    if ($_SESSION["rol"] === 'admin') {
-        header("Location: ../views/panel_admin.php");
-    } else {
-        header("Location: ../views/panel_usuario.php");
-    }
+    // Redirige según el rol
+    header("Location: ../views/" . ($_SESSION["rol"] === 'admin' ? 'panel_admin.php' : 'panel_usuario.php'));
     exit;
 } else {
-    header("Location: ../views/home.php?login=fallido");
+    $_SESSION['error_login'] = "El usuario no existe.";
+    header("Location: ../views/home.php");
     exit;
 }

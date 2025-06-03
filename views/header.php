@@ -25,8 +25,8 @@ require_once 'modalLogin.php'; // Solo aquí
   <meta name="apple-mobile-web-app-capable" content="yes">
 
   <!-- ✅ Favicon e iconos -->
-  <link rel="icon" href="/TFG/views/bootstrap/img/icon-192.png" type="image/png">
-  <link rel="apple-touch-icon" href="/TFG/views/bootstrap/img/icon-192.png">
+  <link rel="icon" href="/TFG/views/bootstrap/img/logo/logo5.png" type="image/png">
+  <link rel="apple-touch-icon" href="/TFG/views/bootstrap/img/logo/logo5.png">
   <link rel="manifest" href="/TFG/manifest.json">
 
   <!-- ✅ CSS -->
@@ -116,14 +116,29 @@ require_once 'modalLogin.php'; // Solo aquí
     </div>
   </nav>
 </header>
+    <?php if (isset($_SESSION['error_login'])): ?>
+  <!-- Si existe un mensaje de error de login en la sesión... -->
+  <script>
+    // ...se lo pasamos a JavaScript como una variable global
+    window.errorLoginMensaje = <?= json_encode($_SESSION['error_login']) ?>;
+  </script>
+  <?php unset($_SESSION['error_login']); ?> <!-- Eliminamos el mensaje para que no se repita en la siguiente carga -->
+<?php else: ?>
+  <!-- Si no hay mensaje de error, igualamos la variable a null -->
+  <script>
+    window.errorLoginMensaje = null;
+  </script>
+<?php endif; ?>
 
 
-    <!-- JS del buscador -->
+
     <script src="/TFG/views/javascript/buscadorHeader.js"></script>
     <script src="/TFG/views/javascript/slider.js"></script>
     <script src="/TFG/views/javascript/calculadora.js"></script>
     <script src="/TFG/views/javascript/registro.js"></script>
     <script src="/TFG/views/javascript/login.js"></script>
+    <script src="/TFG/views/javascript/errorLogin.js"></script>
+
 
 
   

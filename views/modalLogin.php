@@ -9,16 +9,19 @@
       <button class="btn btn-outline-primary" id="abrirRegistro">Soy nuevo</button>
     </div>
 
+    <!-- 🟥 Contenedor para mostrar errores de login -->
+    <div id="errorLogin" class="alert alert-danger text-center mb-3" style="display: none;"></div>
+
     <form id="form-login" action="/TFG/controllers/procesarLogin.php" method="POST">
-        <div class="mb-3">
-            <label for="email" class="form-label">Correo Electrónico</label>
-            <input type="email" id="email" name="email" required class="form-control" />
-        </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Contraseña</label>
-            <input type="password" id="password" name="password" required class="form-control" />
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo Electrónico</label>
+        <input type="email" id="email" name="email" required class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" id="password" name="password" required class="form-control" />
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
     </form>
   </div>
 </div>
@@ -36,7 +39,6 @@
     </div>
 
     <form id="form-register" action="/TFG/controllers/procesarRegistro.php" method="POST">
-
       <div class="mb-3">
         <label for="nombre" class="form-label">Nombre Completo</label>
         <input type="text" id="nombre" name="nombre" required class="form-control">
