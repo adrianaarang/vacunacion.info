@@ -1,5 +1,9 @@
 <?php
-$mensaje = null; // <-- Mensaje que pasaremos a la vista
+require_once __DIR__ . '/../models/BBDD.php'; // 🆕 Necesario para incluir la clase
+
+$db = new BBDD(); 
+
+$mensaje = null;
 
 // Procesar formularios
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

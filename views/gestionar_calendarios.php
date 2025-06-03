@@ -42,7 +42,7 @@ require_once __DIR__ . '/../controllers/gestionarCalendariosController.php';
   </div>
 
   <div class="text-center mt-4">
-    <a href="/TFG/views/panel_admin.php" class="btn btn-secondary">← Volver al Panel de Administración</a>
+    <a href="/TFG/views/panel_admin.php" class="btn btn-primary">← Volver al Panel de Administración</a>
   </div>
 </div>
 

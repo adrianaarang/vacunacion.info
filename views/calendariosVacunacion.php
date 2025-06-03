@@ -35,10 +35,6 @@ require_once __DIR__ . '/../controllers/pintarVacunasComunidad.php';
       <button type="submit" class="btn btn-primary">Ver calendario</button>
     </div>
   </form>
-
-  <div class="text-center mt-3">
-    <img src="/TFG/views/bootstrap/img/logo/logo5.webp" alt="Logo" class="img-fluid" style="max-width: 120px;">
-  </div>
 </section>
 
 <?php
