@@ -1,9 +1,16 @@
 # Vacunacion.info
 
-**Vacunacion.info** 
-Su objetivo es facilitar a las familias la gestión y el seguimiento del calendario de vacunación infantil, ofreciendo información fiable, personalizada y accesible desde cualquier dispositivo.
+**Vacunacion.info** es una plataforma web diseñada para facilitar a las familias la gestión y seguimiento del calendario de vacunación infantil. Ofrece información fiable, personalizada y accesible desde cualquier dispositivo.
 
-## Funcionalidades principales
+## 🌐 Proyecto en producción
+
+Puedes visitar la plataforma desplegada en el siguiente enlace:
+
+🔗 **[https://vacunacion.info](https://vacunacion.info)**
+
+---
+
+## 🚀 Funcionalidades principales
 
 - Consulta del calendario vacunal infantil por edad y comunidad autónoma.
 - Registro de usuarios con perfil de madre/padre.
@@ -13,29 +20,33 @@ Su objetivo es facilitar a las familias la gestión y el seguimiento del calenda
 - Diseño responsive y accesible.
 - Despliegue en servidor remoto (AWS Lightsail).
 
-## Tecnologías utilizadas
+---
 
-- HTML5, CSS3 y JavaScript
-- PHP (MVC manual)
+## 🛠 Tecnologías utilizadas
+
+- HTML5, CSS3, JavaScript
+- PHP (con arquitectura MVC)
 - MySQL y phpMyAdmin
 - Bootstrap 5
 - AJAX y jQuery
-- API de envío de correos mediante [Brevo (Sendinblue)](https://www.brevo.com/)
-- PuTTY y WinSCP para gestión remota en AWS
-- PlantUML para la documentación técnica
+- API de correos con [Brevo (Sendinblue)](https://www.brevo.com/)
+- PuTTY y WinSCP para administración remota
+- PlantUML para documentación técnica
 - Git y GitHub para control de versiones
 
-## Instalación
+---
 
-1. Clona el repositorio:
+## ⚙️ Instalación
+
+1. Clona este repositorio:
 
    ```bash
    git clone https://github.com/usuario/repositorio.git
    ```
 
-2. Importa la base de datos desde el archivo `vacunacion.info.sql` usando phpMyAdmin o consola MySQL.
+2. Importa la base de datos `vacunacion.info.sql` en tu servidor local (por ejemplo, phpMyAdmin o terminal MySQL).
 
-3. Configura los accesos a la base de datos en el archivo `models/BBDD.php`:
+3. Configura tu conexión a la base de datos en `models/BBDD.php`:
 
    ```php
    private $cadena_conexion = 'mysql:dbname=vacunacion.info;host=localhost';
@@ -43,19 +54,28 @@ Su objetivo es facilitar a las familias la gestión y el seguimiento del calenda
    private $password = 'TU_CONTRASEÑA';
    ```
 
-4. **IMPORTANTE**: Por razones de seguridad, la clave de la API para el envío de correos **no está incluida** en este repositorio.  
-   Para que los recordatorios automáticos funcionen correctamente, deberás insertar tu propia clave API en el archivo:
+4. ⚠️ **IMPORTANTE**: Por seguridad, la clave API de Brevo **no se incluye** en el repositorio.
+   Para activar el envío de correos, inserta tu clave en:
 
-   **`controllers/recordatorios.php`**
+   `controllers/recordatorios.php`
 
+   ```php
+   $apiKey = "tu-clave-api-aquí";
+   ```
 
-## Seguridad
+---
 
-- Las contraseñas de usuario están encriptadas.
-- El acceso al panel de administración está protegido.
-- Se han aplicado medidas de validación en formularios tanto en el frontend como en el backend.
-- Este repositorio omite cualquier dato sensible o privado por motivos de seguridad.
+## 🔐 Seguridad
 
-## Autoría
+- Contraseñas cifradas con `password_hash`.
+- Validaciones de formularios tanto en cliente como servidor.
+- Acceso restringido por roles (`admin`, `usuario`).
+- No se incluye información sensible ni claves privadas en el repositorio.
 
-Este proyecto ha sido desarrollado por **Adriana Aránguez García** como parte del módulo de Proyecto en el CFGS de Desarrollo de Aplicaciones Web.
+---
+
+## 👩‍💻 Autoría
+
+Proyecto desarrollado por **Adriana Aránguez García** como parte del módulo de Proyecto del CFGS en Desarrollo de Aplicaciones Web.
+
+---
