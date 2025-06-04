@@ -9,7 +9,7 @@
         </button>
     </div>
 </nav>
-<!-- 🖼 Carrusel SOLO visible en md+ -->
+<!--  Carrusel SOLO visible en md+ -->
 <div class="d-none d-md-block">
   <div id="carouselFade" class="carousel slide carousel-fade w-100" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -37,14 +37,14 @@
 </div>
 
 
-<!-- 🖼 Imagen fija para móviles -->
+<!--  Imagen fija para móviles -->
 <div class="d-block d-md-none">
   <img src="/TFG/views/bootstrap/img/slider/foto3.webp" class="img-fluid w-100" alt="Imagen 3">
 </div>
 
 
 
-   <!-- ✅ Sección de Guía de Vacunación -->
+   <!--  Sección de Guía de Vacunación -->
 <section class="container-fluid my-5 px-4">
   <h2 class="text-center mb-4">Guía de vacunación</h2>
   <div class="row g-4 justify-content-center">

@@ -84,7 +84,7 @@ function enviarCorreoBrevo($destinatario, $nombreDestinatario, $asunto, $conteni
         "htmlContent" => $contenidoHTML
     ];
 
-    $apiKey = "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";
+    $apiKey = "insertaAquiContraseña";
 
     $options = [
         "http" => [

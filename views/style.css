@@ -1,7 +1,4 @@
-
-/* style.css */
-
-/* === Colores principales === */
+/* === Variables de color para consistencia y fácil mantenimiento === */
 :root {
   --primary-color: #007B8A;
   --secondary-color: #6C757D;
@@ -19,13 +16,13 @@
   --section-background: #ffffff;
 }
 
+/* Color de fondo general y color de texto base */
 body {
   background-color: var(--background-light);
   color: #333;
 }
 
-
-/* === Header === */
+/* === Estilos del header === */
 header {
   background-color: var(--header-dark);
   color: white;
@@ -43,7 +40,7 @@ header .btn.text-dark {
   color: var(--primary-color);
 }
 
-/* === Navbar personalizada unificada === */
+/* === Estilos personalizados para la barra de navegación === */
 .navbar,
 .navbar-light {
   background-color: var(--navbar-bg) !important;
@@ -64,10 +61,10 @@ header .btn.text-dark {
   color: var(--nav-link-hover);
 }
 
-/* === Botones === */
+/* === Botones primarios y de login/registro === */
 .btn-primary,
 .btn-register,
-.btn-login{
+.btn-login {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
   color: #fff;
@@ -75,7 +72,7 @@ header .btn.text-dark {
 
 .btn-primary:hover,
 .btn-register:hover,
-.btn-login:hover{
+.btn-login:hover {
   background-color: #006673;
   border-color: #006673;
 }
@@ -105,7 +102,7 @@ header .btn.text-dark {
   background-color: var(--input-bg);
 }
 
-/* Asegurar que los formularios mantengan su tamaño incluso en pantallas grandes */
+/* Evitar que los formularios se estiren demasiado */
 form {
   width: 100%;
   max-width: 100%;
@@ -117,14 +114,14 @@ form {
   max-width: 600px;
 }
 
-/* === Inputs === */
+/* === Inputs enfocados con sombreado suave === */
 .form-control:focus,
 .form-select:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 138, 0.25);
 }
 
-/* === Enlaces === */
+/* === Estilo para enlaces === */
 a {
   color: var(--primary-color);
   text-decoration: none;
@@ -135,34 +132,31 @@ a:hover {
   text-decoration: underline;
 }
 
-/* === Social buttons === */
+/* === Botones con íconos y estilo Gmail === */
 button img {
   vertical-align: middle;
   margin-right: 10px;
 }
 
-/* Icono Gmail estilo Bootstrap */
 .btn-gmail::before {
   content: "\f0e0";
   font-family: "Bootstrap Icons";
   margin-right: 8px;
-  font-weight: normal;
 }
 
-/* === Layout ajustes === */
+/* Contenedor principal centrado */
 .container {
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
-/* === Secciones condicionales === */
+/* Secciones condicionales que se muestran según perfil */
 #children-fields,
 #traveler-fields {
   transition: all 0.3s ease;
 }
 
-/* === Sección Sobre Nosotros === */
+/* === Sección “Sobre Nosotros” === */
 #sobre-nosotros {
   background-color: var(--section-background);
 }
@@ -194,34 +188,33 @@ button img {
   color: #555;
 }
 
-/* Fondo general suave */
+/* Reafirmo el fondo general */
 body {
   background-color: #f8f9fa;
 }
 
-/* Estilo del título */
+/* Títulos principales */
 h1 {
   font-weight: 600;
 }
 
-/* Estilo del contenedor principal */
+/* Estilo para tarjetas en secciones específicas */
 .card {
-  max-width: 600px;           /* Ancho máximo */
-  margin: 0 auto;             /* Centrado horizontal */
-  border-radius: 1rem;        /* Bordes redondeados */
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 1rem;
 }
 
-/* Tamaño del texto del resultado */
+/* Resultado con tamaño ligeramente mayor */
 #resultado {
   font-size: 1.1rem;
 }
+
 .titulo-principal {
   color: var(--heading-color);
 }
 
-/* ==== CARRUSEL ==== */
-
-/* ==== Carrusel con efecto fade (horizontal) ==== */
+/* === Carrusel con efecto desvanecido === */
 .carousel-fade .carousel-item {
   opacity: 0;
   transition: opacity 1s ease-in-out;
@@ -236,18 +229,18 @@ h1 {
   object-fit: cover;
 }
 
-
-/* === Bordes laterales del carrusel para alinear con el header === */
+/* Bordes del carrusel en línea con el header */
 #carouselFade::before,
 #carouselFade::after {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 12px; /* Grosor del borde */
-  background-color: var(--header-dark); /* Color corporativo */
+  width: 12px;
+  background-color: var(--header-dark);
   z-index: 2;
 }
+
 #carouselFade::before {
   left: 0;
 }
@@ -255,16 +248,7 @@ h1 {
   right: 0;
 }
 
-
-.carousel.vertical::before {
-  left: 0;
-}
-
-.carousel.vertical::after {
-  right: 0;
-}
-
-/* === Footer === */
+/* Estilos del footer */
 footer {
   background-color: var(--header-dark);
   color: white;
@@ -292,7 +276,8 @@ footer .social-icons a {
   font-size: 1.2rem;
   margin: 0 8px;
 }
-/* Forzar estilo corporativo en botones primarios */
+
+/* Botones primarios con estilo forzado */
 button.btn.btn-primary,
 input[type="submit"].btn.btn-primary,
 a.btn.btn-primary {
@@ -307,7 +292,8 @@ a.btn.btn-primary:hover {
   background-color: #006673 !important;
   border-color: #006673 !important;
 }
-/* === Página: Efectos Secundarios === */
+
+/* === Página de efectos secundarios === */
 .efectos-secundarios .card {
   border: 1px solid rgba(0, 123, 138, 0.2);
   border-radius: 1rem;
@@ -344,7 +330,7 @@ a.btn.btn-primary:hover {
   font-weight: 700;
 }
 
-/* === Líneas verticales laterales globales === */
+/* Líneas verticales decorativas en los bordes del body */
 body::before,
 body::after {
   content: "";
@@ -363,7 +349,8 @@ body::before {
 body::after {
   right: 0;
 }
-/* === Login Modal === */
+
+/* === Modal de login === */
 .login-overlay {
   position: fixed;
   inset: 0;
@@ -388,6 +375,7 @@ body::after {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Botones de pestaña en login */
 .tab-buttons {
   display: flex;
   justify-content: center;
@@ -406,7 +394,7 @@ body::after {
   font-weight: 600;
 }
 
-/* Botón cerrar */
+/* Botón cerrar modal */
 .btn-close {
   background-color: transparent;
   border: none;
@@ -437,7 +425,7 @@ body::after {
   color: #db4437;
 }
 
-/* Botón "Soy nuevo" en login modal */
+/* Botón "Soy nuevo" */
 .tab-buttons .btn-outline-primary {
   color: var(--primary-color);
   border-color: var(--primary-color);
@@ -449,7 +437,7 @@ body::after {
   border-color: var(--primary-color);
 }
 
-/* Enlaces dentro del login modal */
+/* Enlaces dentro del modal */
 .login-modal a {
   color: var(--primary-color);
   text-decoration: none;
@@ -459,6 +447,8 @@ body::after {
   color: var(--link-hover);
   text-decoration: underline;
 }
+
+/* === Modal de registro === */
 .registro-overlay {
   position: fixed;
   top: 0;
@@ -466,7 +456,7 @@ body::after {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  display: none; /* se activa dinámicamente */
+  display: none;
   align-items: center;
   justify-content: center;
   z-index: 9999;
@@ -486,6 +476,7 @@ body::after {
   font-size: 1.6rem;
   margin-bottom: 1.5rem;
 }
+
 /* === Sugerencias del buscador === */
 #sugerencias {
   position: absolute;
@@ -521,18 +512,23 @@ body::after {
 #sugerencias.d-none {
   display: none;
 }
+
+/* === Otros ajustes visuales === */
 .btn-outline-primary {
   color: var(--primary-color);
   border-color: var(--primary-color);
 }
+
 .btn-outline-primary:hover {
   background-color: var(--primary-color);
   color: white;
 }
+
 .footer-personalizado {
   background-color: var(--header-dark);
   color: white;
 }
+
 .icon-box {
   min-height: 100%;
   display: flex;
@@ -544,4 +540,13 @@ body::after {
   background: #f4fdfd;
   transition: all 0.3s ease-in-out;
   border: 1px solid rgba(0, 123, 138, 0.1);
+}
+
+/* === Filtro de tarjetas por edad (página efectos secundarios) === */
+#card-container .card {
+  display: none;
+}
+
+#card-container .card.show {
+  display: block;
 }

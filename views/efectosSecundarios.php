@@ -2,7 +2,7 @@
 require_once __DIR__ . '/header.php';
 ?>
 
-<section class="container-xl my-5 efectos-secundarios"> <!-- ✅ Ancho amplio -->
+<section class="container-xl my-5 efectos-secundarios">
   <h2 class="section-header text-center mb-4">Vacunas Infantiles y Posibles Efectos Secundarios</h2>
 
   <div class="alert alert-info text-center" role="alert">
@@ -13,7 +13,6 @@ require_once __DIR__ . '/header.php';
     <img src="/TFG/views/bootstrap/img/logo/logo5.png" alt="Logo" class="img-fluid" style="max-width: 120px;">
   </div>
 
-  <!-- 🔘 Botones de filtro -->
   <div class="text-center filter-btns mb-4">
     <button class="btn btn-primary" onclick="filterCards('all')">Todas</button>
     <button class="btn btn-primary" onclick="filterCards('0-6m')">0-6 meses</button>
@@ -23,7 +22,6 @@ require_once __DIR__ . '/header.php';
     <button class="btn btn-primary" onclick="filterCards('adolescentes')">Adolescentes</button>
   </div>
 
-  <!-- 💉 Tarjetas de vacunas -->
   <div class="row gx-4 gy-4 justify-content-center" id="card-container">
     <?php
     $vacunas = [
@@ -66,10 +64,8 @@ require_once __DIR__ . '/header.php';
       const edades = card.getAttribute('data-age').split(' ');
       if (grupo === 'all' || edades.includes(grupo)) {
         card.classList.add('show');
-        card.parentElement.style.display = 'block';
       } else {
         card.classList.remove('show');
-        card.parentElement.style.display = 'none';
       }
     });
   }

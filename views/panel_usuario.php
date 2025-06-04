@@ -1,21 +1,24 @@
 <?php
+// Inicio de sesión y control de acceso: si no hay usuario logueado, redirige a la página de inicio
 session_start();
 if (!isset($_SESSION['email'])) {
     header("Location: /TFG/views/home.php");
     exit;
 }
 
+// Incluye el encabezado común con navegación y configuración global
 require_once __DIR__ . '/header.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Configuración general de la página -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Panel del Usuario</title>
 
-  <!-- Estilos -->
+  <!-- Recursos externos: Bootstrap, íconos y hoja de estilos personalizada -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -23,13 +26,17 @@ require_once __DIR__ . '/header.php';
 </head>
 <body>
 
+<!-- Sección principal del panel -->
 <section class="container-xl my-5">
   <h2 class="text-center mb-4">Panel de Usuario</h2>
+
+  <!-- Mensaje personalizado con el nombre del usuario logueado -->
   <p class="text-center">Hola, <?= htmlspecialchars($_SESSION['nombre']) ?>. Desde aquí puedes gestionar tu perfil y datos familiares.</p>
 
+  <!-- Contenedor de tarjetas con funcionalidades del usuario -->
   <div class="row g-4">
 
-    <!-- Editar perfil -->
+    <!-- Tarjeta: Editar perfil -->
     <div class="col-md-6">
       <div class="card h-100 shadow-sm">
         <div class="card-body">
@@ -40,7 +47,7 @@ require_once __DIR__ . '/header.php';
       </div>
     </div>
 
-    <!-- Gestionar hijos -->
+    <!-- Tarjeta: Gestión de hijos -->
     <div class="col-md-6">
       <div class="card h-100 shadow-sm">
         <div class="card-body">
@@ -51,7 +58,7 @@ require_once __DIR__ . '/header.php';
       </div>
     </div>
 
-    <!-- Ver calendario -->
+    <!-- Tarjeta: Ver calendario vacunal -->
     <div class="col-md-6">
       <div class="card h-100 shadow-sm">
         <div class="card-body">
@@ -62,7 +69,7 @@ require_once __DIR__ . '/header.php';
       </div>
     </div>
 
-    <!-- Eliminar cuenta -->
+    <!-- Tarjeta: Eliminar cuenta -->
     <div class="col-md-6">
       <div class="card h-100 shadow-sm">
         <div class="card-body">
@@ -77,12 +84,16 @@ require_once __DIR__ . '/header.php';
       </div>
     </div>
 
-  </div>
+  </div> <!-- Fin del row -->
 </section>
 
+<!-- Script de Bootstrap para componentes interactivos -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
 
-<?php require_once __DIR__ . '/footer.php'; ?>
+<?php
+// Incluye el pie de página del sitio
+require_once __DIR__ . '/footer.php';
+?>

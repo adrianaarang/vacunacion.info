@@ -1,5 +1,9 @@
-<?php require_once __DIR__ . '/header.php'; ?>
+<?php 
+// Incluye el encabezado general del sitio con navegación
+require_once __DIR__ . '/header.php'; 
+?>
 
+<!-- Sección principal con título y descripción -->
 <section class="container-xl my-5">
   <h1 class="text-center mb-4">Enlaces de Interés: Beneficios de la Vacunación Infantil</h1>
 
@@ -7,7 +11,10 @@
     Descubre información respaldada por evidencia científica sobre la importancia de vacunar a los más pequeños.
   </p>
 
+  <!-- Contenedor responsive de tarjetas con enlaces -->
   <div class="row row-cols-1 row-cols-md-2 g-4">
+
+    <!-- Tarjeta 1: Ministerio de Sanidad -->
     <div class="col">
       <div class="card h-100 shadow-sm">
         <div class="card-body">
@@ -18,6 +25,7 @@
       </div>
     </div>
 
+    <!-- Tarjeta 2: Asociación Española de Pediatría -->
     <div class="col">
       <div class="card h-100 shadow-sm">
         <div class="card-body">
@@ -28,6 +36,7 @@
       </div>
     </div>
 
+    <!-- Tarjeta 3: UNICEF -->
     <div class="col">
       <div class="card h-100 shadow-sm">
         <div class="card-body">
@@ -38,6 +47,7 @@
       </div>
     </div>
 
+    <!-- Tarjeta 4: ECDC -->
     <div class="col">
       <div class="card h-100 shadow-sm">
         <div class="card-body">
@@ -48,6 +58,7 @@
       </div>
     </div>
 
+    <!-- Tarjeta 5: CDC -->
     <div class="col">
       <div class="card h-100 shadow-sm">
         <div class="card-body">
@@ -57,18 +68,22 @@
         </div>
       </div>
     </div>
-      
-      <div class="col">
-  <div class="card h-100 shadow-sm">
-    <div class="card-body">
-      <h5 class="card-title">Cochrane Review: Efectividad de las vacunas en la infancia</h5>
-      <p class="card-text">Revisión sistemática de Cochrane que evalúa la eficacia de la vacunación infantil en la prevención de enfermedades graves y mortalidad.</p>
-      <a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD004407.pub4/full" target="_blank" class="btn btn-primary">Leer estudio</a>
-    </div>
-  </div>
-</div>
 
-  </div>
+    <!-- Tarjeta 6: Cochrane Review -->
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Cochrane Review: Efectividad de las vacunas en la infancia</h5>
+          <p class="card-text">Revisión sistemática de Cochrane que evalúa la eficacia de la vacunación infantil en la prevención de enfermedades graves y mortalidad.</p>
+          <a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD004407.pub4/full" target="_blank" class="btn btn-primary">Leer estudio</a>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- Fin del row de tarjetas -->
 </section>
 
-<?php require_once __DIR__ . '/footer.php'; ?>
+<?php 
+// Incluye el pie de página del sitio
+require_once __DIR__ . '/footer.php'; 
+?>

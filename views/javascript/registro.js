@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function () {
-  // ====== ELEMENTOS DEL DOM ======
+  // === ELEMENTOS DEL DOM ===
   const form = document.getElementById("form-register");
   const registroOverlay = document.getElementById("registroOverlay");
   const cerrarRegistro = document.getElementById("cerrarRegistro");
@@ -17,31 +17,17 @@ window.addEventListener("DOMContentLoaded", function () {
   const errorEmail = document.getElementById("errorEmailRegistro");
   const errorPassword = document.getElementById("errorPasswordRegistro");
 
-  // ====== CAMBIO ENTRE LOGIN Y REGISTRO ======
+  // === CAMBIO ENTRE LOGIN Y REGISTRO ===
   function mostrarLogin() {
     registroOverlay.style.display = "none";
     loginOverlay.style.display = "flex";
   }
 
-  if (cerrarRegistro) {
-    cerrarRegistro.addEventListener("click", () => registroOverlay.style.display = "none");
-  }
+  cerrarRegistro?.addEventListener("click", () => registroOverlay.style.display = "none");
+  mostrarLoginDesdeRegistro?.addEventListener("click", e => { e.preventDefault(); mostrarLogin(); });
+  abrirDesdeRegistro?.addEventListener("click", e => { e.preventDefault(); mostrarLogin(); });
 
-  if (mostrarLoginDesdeRegistro) {
-    mostrarLoginDesdeRegistro.addEventListener("click", e => {
-      e.preventDefault();
-      mostrarLogin();
-    });
-  }
-
-  if (abrirDesdeRegistro) {
-    abrirDesdeRegistro.addEventListener("click", e => {
-      e.preventDefault();
-      mostrarLogin();
-    });
-  }
-
-  // ====== GENERACIÓN DINÁMICA DE CAMPOS DE FECHAS DE HIJOS ======
+  // === CAMPOS FECHAS DINÁMICOS ===
   function generateChildrenInputs() {
     const num = parseInt(numHijosInput.value);
     childrenDatesContainer.innerHTML = "";
@@ -51,25 +37,12 @@ window.addEventListener("DOMContentLoaded", function () {
         const div = document.createElement("div");
         div.classList.add("mb-3");
 
-        const label = document.createElement("label");
-        label.classList.add("form-label");
-        label.setAttribute("for", `fecha_nacimiento_${i}`);
-        label.textContent = `Fecha de Nacimiento del Hijo ${i}`;
+        div.innerHTML = `
+          <label for="fecha_nacimiento_${i}" class="form-label">Fecha de Nacimiento del Hijo ${i}</label>
+          <input type="date" class="form-control" name="fecha_nacimiento_${i}" id="fecha_nacimiento_${i}" required>
+          <div id="error_fecha_${i}" class="invalid-feedback"></div>
+        `;
 
-        const input = document.createElement("input");
-        input.classList.add("form-control");
-        input.type = "date";
-        input.name = `fecha_nacimiento_${i}`;
-        input.id = `fecha_nacimiento_${i}`;
-        input.required = true;
-
-        const error = document.createElement("div");
-        error.id = `error_fecha_${i}`;
-        error.classList.add("invalid-feedback");
-
-        div.appendChild(label);
-        div.appendChild(input);
-        div.appendChild(error);
         childrenDatesContainer.appendChild(div);
       }
     }
@@ -77,83 +50,74 @@ window.addEventListener("DOMContentLoaded", function () {
 
   if (numHijosInput) {
     numHijosInput.addEventListener("input", generateChildrenInputs);
-    if (numHijosInput.value) generateChildrenInputs();
+    if (numHijosInput.value) generateChildrenInputs(); // Para editar
   }
 
-  // ====== VALIDACIONES ======
+  // === VALIDACIONES ===
   function validarNombre() {
     const valor = nombre.value.trim();
     const regex = /^[A-ZÁÉÍÓÚÜÑa-záéíóúüñ-]+(?: [A-ZÁÉÍÓÚÜÑa-záéíóúüñ-]+)?$/;
 
     if (!valor) {
       errorNombre.textContent = "El nombre es obligatorio.";
-      nombre.classList.add("is-invalid");
-      return false;
     } else if (valor.length > 50) {
       errorNombre.textContent = "Máximo 50 caracteres.";
-      nombre.classList.add("is-invalid");
-      return false;
     } else if (!regex.test(valor)) {
       errorNombre.textContent = "Introduce solo uno o dos nombres.";
-      nombre.classList.add("is-invalid");
-      return false;
+    } else {
+      nombre.classList.remove("is-invalid");
+      nombre.classList.add("is-valid");
+      errorNombre.textContent = "";
+      return true;
     }
 
-    errorNombre.textContent = "";
-    nombre.classList.remove("is-invalid");
-    nombre.classList.add("is-valid");
-    return true;
+    nombre.classList.add("is-invalid");
+    return false;
   }
 
   function validarEmail() {
     const valor = email.value.trim();
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    email.classList.remove("is-valid", "is-invalid");
-
     if (!valor) {
       errorEmail.textContent = "El email es obligatorio.";
-      email.classList.add("is-invalid");
-      return false;
     } else if (!regex.test(valor)) {
       errorEmail.textContent = "Email no válido.";
-      email.classList.add("is-invalid");
-      return false;
+    } else {
+      email.classList.remove("is-invalid");
+      email.classList.add("is-valid");
+      errorEmail.textContent = "";
+      return true;
     }
 
-    errorEmail.textContent = "";
-    email.classList.add("is-valid");
-    return true;
+    email.classList.add("is-invalid");
+    return false;
   }
 
   function validarPassword() {
     const valor = password.value.trim();
-    const longitud = /^.{8,15}$/;
-    const mayus = /[A-Z]/;
-    const minus = /[a-z]/;
-    const digito = /\d/;
-    const especial = /[!@#$%^&*(),.?":{}|<>]/;
-    const sinEspacios = /^\S+$/;
-
-    password.classList.remove("is-invalid", "is-valid");
+    const requisitos = [
+      /^.{8,15}$/,      // longitud
+      /[A-Z]/,          // mayúscula
+      /[a-z]/,          // minúscula
+      /\d/,             // número
+      /[!@#$%^&*(),.?":{}|<>]/, // símbolo
+      /^\S+$/           // sin espacios
+    ];
 
     if (!valor) {
       errorPassword.textContent = "La contraseña es obligatoria.";
-      password.classList.add("is-invalid");
-      return false;
-    }
-
-    const esValida = longitud.test(valor) && mayus.test(valor) && minus.test(valor) && digito.test(valor) && especial.test(valor) && sinEspacios.test(valor);
-
-    if (!esValida) {
+    } else if (!requisitos.every(r => r.test(valor))) {
       errorPassword.textContent = "Debe tener entre 8 y 15 caracteres, incluir mayúsculas, minúsculas, un número y un símbolo.";
-      password.classList.add("is-invalid");
-      return false;
+    } else {
+      password.classList.remove("is-invalid");
+      password.classList.add("is-valid");
+      errorPassword.textContent = "";
+      return true;
     }
 
-    errorPassword.textContent = "";
-    password.classList.add("is-valid");
-    return true;
+    password.classList.add("is-invalid");
+    return false;
   }
 
   function validarNumeroHijos() {
@@ -170,44 +134,32 @@ window.addEventListener("DOMContentLoaded", function () {
   function validarFechasHijos() {
     const hoy = new Date();
     let valido = true;
-    const inputsFecha = childrenDatesContainer.querySelectorAll("input[type='date']");
 
+    const inputsFecha = childrenDatesContainer.querySelectorAll("input[type='date']");
     inputsFecha.forEach((input, i) => {
       const errorDiv = document.getElementById(`error_fecha_${i + 1}`);
       const fecha = new Date(input.value);
 
-      input.classList.remove("is-invalid", "is-valid");
+      input.classList.remove("is-valid", "is-invalid");
       errorDiv.textContent = "";
 
       if (!input.value) {
         errorDiv.textContent = "La fecha es obligatoria.";
         input.classList.add("is-invalid");
         valido = false;
-      } else if (fecha > hoy) {
-        errorDiv.textContent = "La fecha no puede ser futura.";
+      } else if (fecha > hoy || fecha.getFullYear() < hoy.getFullYear() - 18) {
+        errorDiv.textContent = "Debe tener entre 0 y 18 años.";
         input.classList.add("is-invalid");
         valido = false;
       } else {
-        const edad = hoy.getFullYear() - fecha.getFullYear();
-        const m = hoy.getMonth() - fecha.getMonth();
-        const d = hoy.getDate() - fecha.getDate();
-        const ajuste = m < 0 || (m === 0 && d < 0) ? 1 : 0;
-        const edadReal = edad - ajuste;
-
-        if (edadReal < 0 || edadReal > 18) {
-          errorDiv.textContent = "Debe tener entre 0 y 18 años.";
-          input.classList.add("is-invalid");
-          valido = false;
-        } else {
-          input.classList.add("is-valid");
-        }
+        input.classList.add("is-valid");
       }
     });
 
     return valido;
   }
 
-  // ====== VALIDACIÓN FINAL EN EL ENVÍO DEL FORMULARIO ======
+  // === VALIDACIÓN FINAL ===
   form.addEventListener("submit", e => {
     if (
       !validarNombre() ||
@@ -220,32 +172,32 @@ window.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // ====== VALIDACIÓN EN TIEMPO REAL ======
+  // === VALIDACIÓN EN TIEMPO REAL ===
   nombre.addEventListener("input", validarNombre);
   email.addEventListener("input", validarEmail);
   password.addEventListener("input", validarPassword);
 });
-  // ====== CARGAR COMUNIDADES CON AJAX ======
-  const comunidadSelect = document.getElementById('comunidad_id');
 
-  if (comunidadSelect) {
-    fetch('/TFG/controllers/getComunidades.php')
-      .then(res => res.json())
-      .then(data => {
-        if (!Array.isArray(data)) throw new Error("Respuesta inesperada");
+// === CARGA DE COMUNIDADES POR AJAX ===
+const comunidadSelect = document.getElementById('comunidad_id');
 
-        data.forEach(comunidad => {
-          const option = document.createElement('option');
-          option.value = comunidad.id;
-          option.textContent = comunidad.nombre;
-          comunidadSelect.appendChild(option);
-        });
-      })
-      .catch(error => {
-        console.error('Error al cargar comunidades:', error);
+if (comunidadSelect) {
+  fetch('/TFG/controllers/getComunidades.php')
+    .then(res => res.json())
+    .then(data => {
+      if (!Array.isArray(data)) throw new Error("Respuesta inesperada");
+      data.forEach(comunidad => {
         const option = document.createElement('option');
-        option.disabled = true;
-        option.textContent = 'Error al cargar comunidades';
+        option.value = comunidad.id;
+        option.textContent = comunidad.nombre;
         comunidadSelect.appendChild(option);
       });
-  }
+    })
+    .catch(error => {
+      console.error('Error al cargar comunidades:', error);
+      const option = document.createElement('option');
+      option.disabled = true;
+      option.textContent = 'Error al cargar comunidades';
+      comunidadSelect.appendChild(option);
+    });
+}

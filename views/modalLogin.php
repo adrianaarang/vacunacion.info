@@ -9,7 +9,7 @@
       <button class="btn btn-outline-primary" id="abrirRegistro">Soy nuevo</button>
     </div>
 
-    <!-- 🟥 Contenedor para mostrar errores de login -->
+    <!-- Contenedor para mostrar errores de login -->
     <div id="errorLogin" class="alert alert-danger text-center mb-3" style="display: none;"></div>
 
     <form id="form-login" action="/TFG/controllers/procesarLogin.php" method="POST">
