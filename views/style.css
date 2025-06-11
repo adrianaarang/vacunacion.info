@@ -1,0 +1,554 @@
+
+/* style.css */
+
+/* === Colores principales === */
+:root {
+  --primary-color: #007B8A;
+  --secondary-color: #6C757D;
+  --background-light: #f8f9fa;
+  --header-dark: #005e6a;
+  --link-hover: #004a55;
+  --navbar-bg: #e3f2f5;
+  --nav-link-color: #005e6a;
+  --nav-link-hover: #007B8A;
+  --heading-color: #004d57;
+  --label-color: #005e6a;
+  --input-bg: #ffffff;
+  --section-header: #004d57;
+  --icon-color: #007B8A;
+  --section-background: #ffffff;
+}
+
+body {
+  background-color: var(--background-light);
+  color: #333;
+}
+
+
+/* === Header === */
+header {
+  background-color: var(--header-dark);
+  color: white;
+}
+
+header a.navbar-brand img {
+  max-height: 80px;
+}
+
+header .btn.text-white {
+  color: white !important;
+}
+
+header .btn.text-dark {
+  color: var(--primary-color);
+}
+
+/* === Navbar personalizada unificada === */
+.navbar,
+.navbar-light {
+  background-color: var(--navbar-bg) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navbar .nav-link,
+.navbar-light .navbar-nav .nav-link {
+  color: var(--nav-link-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active,
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--nav-link-hover);
+}
+
+/* === Botones === */
+.btn-primary,
+.btn-register,
+.btn-login{
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn-primary:hover,
+.btn-register:hover,
+.btn-login:hover{
+  background-color: #006673;
+  border-color: #006673;
+}
+
+/* === Tarjetas y formularios === */
+.card {
+  border: none;
+  border-radius: 1rem;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-body h2 {
+  color: var(--heading-color);
+  font-weight: bold;
+}
+
+.form-label {
+  font-weight: 500;
+  color: var(--label-color);
+}
+
+.form-select,
+.form-control {
+  background-color: var(--input-bg);
+}
+
+/* Asegurar que los formularios mantengan su tamaño incluso en pantallas grandes */
+form {
+  width: 100%;
+  max-width: 100%;
+}
+
+.col-12.col-sm-8.col-md-6.col-lg-5 {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* === Inputs === */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 138, 0.25);
+}
+
+/* === Enlaces === */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* === Social buttons === */
+button img {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/* Icono Gmail estilo Bootstrap */
+.btn-gmail::before {
+  content: "\f0e0";
+  font-family: "Bootstrap Icons";
+  margin-right: 8px;
+  font-weight: normal;
+}
+
+/* === Layout ajustes === */
+.container {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === Secciones condicionales === */
+#children-fields,
+#traveler-fields {
+  transition: all 0.3s ease;
+}
+
+/* === Sección Sobre Nosotros === */
+#sobre-nosotros {
+  background-color: var(--section-background);
+}
+
+.section-header {
+  color: var(--section-header);
+  font-weight: 700;
+}
+
+.icon-box {
+  text-align: center;
+  padding: 20px;
+  border-radius: 1rem;
+  background: #f4fdfd;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(0, 123, 138, 0.1);
+}
+
+.icon-box i {
+  font-size: 2rem;
+  color: var(--icon-color);
+}
+
+.icon-box h4 {
+  color: var(--heading-color);
+}
+
+.icon-box p {
+  color: #555;
+}
+
+/* Fondo general suave */
+body {
+  background-color: #f8f9fa;
+}
+
+/* Estilo del título */
+h1 {
+  font-weight: 600;
+}
+
+/* Estilo del contenedor principal */
+.card {
+  max-width: 600px;           /* Ancho máximo */
+  margin: 0 auto;             /* Centrado horizontal */
+  border-radius: 1rem;        /* Bordes redondeados */
+}
+
+/* Tamaño del texto del resultado */
+#resultado {
+  font-size: 1.1rem;
+}
+.titulo-principal {
+  color: var(--heading-color);
+}
+
+/* ==== CARRUSEL ==== */
+
+/* ==== Carrusel con efecto fade (horizontal) ==== */
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-item img {
+  height: 75vh;
+  object-fit: cover;
+}
+
+
+/* === Bordes laterales del carrusel para alinear con el header === */
+#carouselFade::before,
+#carouselFade::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 12px; /* Grosor del borde */
+  background-color: var(--header-dark); /* Color corporativo */
+  z-index: 2;
+}
+#carouselFade::before {
+  left: 0;
+}
+#carouselFade::after {
+  right: 0;
+}
+
+
+.carousel.vertical::before {
+  left: 0;
+}
+
+.carousel.vertical::after {
+  right: 0;
+}
+
+/* === Footer === */
+footer {
+  background-color: var(--header-dark);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--primary-color);
+}
+
+footer .social-icons {
+  margin-top: 1rem;
+}
+
+footer .social-icons a {
+  font-size: 1.2rem;
+  margin: 0 8px;
+}
+/* Forzar estilo corporativo en botones primarios */
+button.btn.btn-primary,
+input[type="submit"].btn.btn-primary,
+a.btn.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #fff !important;
+}
+
+button.btn.btn-primary:hover,
+input[type="submit"].btn.btn-primary:hover,
+a.btn.btn-primary:hover {
+  background-color: #006673 !important;
+  border-color: #006673 !important;
+}
+/* === Página: Efectos Secundarios === */
+.efectos-secundarios .card {
+  border: 1px solid rgba(0, 123, 138, 0.2);
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.efectos-secundarios .card:hover {
+  transform: translateY(-4px);
+}
+
+.efectos-secundarios .card-title {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.efectos-secundarios ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.efectos-secundarios ul li {
+  margin-bottom: 0.4rem;
+}
+
+.efectos-secundarios p {
+  color: #444;
+  margin-bottom: 0;
+}
+
+.efectos-secundarios .section-header {
+  color: var(--section-header);
+  font-weight: 700;
+}
+
+/* === Líneas verticales laterales globales === */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 12px;
+  background-color: var(--header-dark);
+  z-index: 1;
+}
+
+body::before {
+  left: 0;
+}
+
+body::after {
+  right: 0;
+}
+/* === Login Modal === */
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.login-modal {
+  background: #fff;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  animation: fadeInUp 0.4s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.tab-buttons .btn {
+  min-width: 140px;
+  border-radius: 20px;
+}
+
+.tab-buttons .btn.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+}
+
+/* Botón cerrar */
+.btn-close {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.btn-close:hover {
+  color: #333;
+  cursor: pointer;
+}
+
+/* Botón Google */
+.btn-outline-dark {
+  border-color: #ccc;
+  background-color: white;
+  color: #333;
+  font-weight: 500;
+}
+
+.btn-outline-dark:hover {
+  background-color: #f1f1f1;
+}
+
+.btn-outline-dark i {
+  font-size: 1.2rem;
+  margin-right: 8px;
+  color: #db4437;
+}
+
+/* Botón "Soy nuevo" en login modal */
+.tab-buttons .btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.tab-buttons .btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+
+/* Enlaces dentro del login modal */
+.login-modal a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.login-modal a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+.registro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none; /* se activa dinámicamente */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.registro-modal {
+  background-color: #fff;
+  max-width: 500px;
+  width: 90%;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.titulo-formulario {
+  color: var(--heading-color);
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+/* === Sugerencias del buscador === */
+#sugerencias {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 1100;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#sugerencias li {
+  padding: 10px 15px;
+  font-size: 0.95rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.2s ease;
+}
+
+#sugerencias li:hover {
+  background-color: #f4fdfd;
+}
+
+#sugerencias.d-none {
+  display: none;
+}
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+.footer-personalizado {
+  background-color: var(--header-dark);
+  color: white;
+}
+.icon-box {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  background: #f4fdfd;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(0, 123, 138, 0.1);
+}
+#card-container .card {
+display: none;
+}
+
+#card-container .card.show {
+display: block;
+}

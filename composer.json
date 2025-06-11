@@ -1,0 +1,13 @@
+{
+    "name": "vacunacioninfo/tfg",
+    "description": "Sistema de gestión de vacunación infantil.",
+    "type": "project",
+    "require": {
+        "getbrevo/brevo-php": "^2.0"
+    },
+    "authors": [
+        {
+            "name": "Adriana Aranguez"
+        }
+    ]
+}
