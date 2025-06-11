@@ -110,7 +110,7 @@ application/manifest+json           webmanifest json
 
 ```txt
 Email: demo@vacunacion.info
-Contraseña: demo1234
+Contraseña: Demo1234.
 ```
 
 ---
