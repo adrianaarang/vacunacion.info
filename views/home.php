@@ -8,13 +8,22 @@
     </button>
   </div>
 </nav>
-<!-- 🖼 Carrusel SOLO visible en md+ -->
+<!-- ✅ Carrusel SOLO visible en md+ -->
+
 <div class="d-none d-md-block">
   <div id="carouselFade" class="carousel slide carousel-fade w-100" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active">
+      <!-- Primer slide CON botón -->
+      <div class="carousel-item active position-relative">
         <img src="/views/bootstrap/img/slider/foto1.webp" class="d-block w-100" alt="Imagen 1">
+        <?php if (!isset($_SESSION['usuario'])): ?>
+          <div class="position-absolute top-50 start-50 translate-middle text-center">
+            <a href="#" class="btn btn-primary btn-lg abrirRegistroDesdeCarrusel">Regístrate ahora</a>
+          </div>
+        <?php endif; ?>
       </div>
+
+      <!-- Segundo y tercer slide SIN botón -->
       <div class="carousel-item">
         <img src="/views/bootstrap/img/slider/foto2.webp" class="d-block w-100" alt="Imagen 2">
       </div>
@@ -23,29 +32,29 @@
       </div>
     </div>
 
-    <!-- Botón anterior -->
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselFade" data-bs-slide="prev" aria-label="Anterior">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     </button>
-
-    <!-- Botón siguiente -->
     <button class="carousel-control-next" type="button" data-bs-target="#carouselFade" data-bs-slide="next" aria-label="Siguiente">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
     </button>
   </div>
 </div>
 
-<!-- 🖼 Imagen fija para móviles -->
-<div class="d-block d-md-none">
-  <img src="/views/bootstrap/img/slider/foto3.webp" class="img-fluid w-100" alt="Imagen 3">
+<!-- ✅ Imagen fija para móviles CON botón -->
+<div class="d-block d-md-none position-relative">
+  <img src="/views/bootstrap/img/slider/foto3.webp" class="img-fluid w-100" alt="Imagen móvil">
+  <?php if (!isset($_SESSION['usuario'])): ?>
+    <div class="position-absolute top-50 start-50 translate-middle text-center">
+      <a href="#" class="btn btn-primary btn-lg abrirRegistroDesdeCarrusel">Regístrate ahora</a>
+    </div>
+  <?php endif; ?>
 </div>
 
-<!-- ✅ Sección de Guía de Vacunación -->
+<!-- ✅ Sección Guía de Vacunación -->
 <section class="container-fluid my-5 px-4">
   <h2 class="text-center mb-4">Guía de vacunación</h2>
   <div class="row g-4 justify-content-center">
-
-    <!-- Card: Calculadora -->
     <div class="col-12 col-sm-6 col-lg-4">
       <div class="card text-center shadow rounded-4 h-100">
         <div class="card-body">
@@ -57,7 +66,6 @@
       </div>
     </div>
 
-    <!-- Card: Calendarios -->
     <div class="col-12 col-sm-6 col-lg-4">
       <div class="card text-center shadow rounded-4 h-100">
         <div class="card-body">
@@ -69,7 +77,6 @@
       </div>
     </div>
 
-    <!-- Card: FAQ -->
     <div class="col-12 col-sm-6 col-lg-4">
       <div class="card text-center shadow rounded-4 h-100">
         <div class="card-body">
@@ -80,8 +87,46 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
+
+<?php require_once "footer.php"; ?>
+
+<!-- ✅ Script para mostrar modal de registro -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const botonesRegistro = document.querySelectorAll(".abrirRegistroDesdeCarrusel");
+    const overlayRegistro = document.getElementById("registroOverlay");
+    const cerrarRegistro = document.getElementById("cerrarRegistro");
+    const mostrarLogin = document.getElementById("mostrarLoginDesdeRegistro");
+    const loginOverlay = document.getElementById("loginOverlay");
+
+    botonesRegistro.forEach(boton => {
+      boton.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (overlayRegistro) {
+          overlayRegistro.style.display = "flex";
+          document.body.style.overflow = "hidden";
+        }
+      });
+    });
+
+    if (cerrarRegistro) {
+      cerrarRegistro.addEventListener("click", function () {
+        overlayRegistro.style.display = "none";
+        document.body.style.overflow = "";
+      });
+    }
+
+    if (mostrarLogin) {
+      mostrarLogin.addEventListener("click", function () {
+        overlayRegistro.style.display = "none";
+        loginOverlay.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      });
+    }
+  });
+</script>
+
 
 <?php require_once "footer.php"; ?>
