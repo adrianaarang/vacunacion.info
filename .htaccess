@@ -1,0 +1,8 @@
+<FilesMatch "\.js$">
+
+  AddType application/javascript .js
+
+  AddCharset utf-8 .js
+
+</FilesMatch>
+

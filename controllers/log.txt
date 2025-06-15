@@ -1,0 +1,21 @@
+2025-05-24 17:23:42 | Enviado a adriaranguez89@gmail.com - Vacuna simulada dentro de un año
+2025-05-24 17:23:53 | Enviado a adriaranguez89@gmail.com - Vacuna simulada dentro de un año
+2025-05-24 17:35:53 | Recordatorio enviado a adriaranguez89@gmail.com para vacuna Hexavalente
+/bin/sh: 1: php: not found
+/bin/sh: 1: php: not found
+2025-06-05 15:05:42 | ? Error con adriaranguez89@gmail.com
+2025-06-05 15:05:42 | ? Error con sara@gmail.com
+2025-06-05 15:05:43 | ? Error con andrea@gmail.com
+2025-06-05 15:05:43 | ? Error con juanitonew@gmail.com
+2025-06-05 15:05:43 | ? Error con amalia@gmail.com
+2025-06-05 15:06:31 | ? Error con adriaranguez89@gmail.com
+2025-06-05 15:06:31 | ? Error con sara@gmail.com
+2025-06-05 15:06:32 | ? Error con andrea@gmail.com
+2025-06-05 15:06:32 | ? Error con juanitonew@gmail.com
+2025-06-05 15:06:32 | ? Error con amalia@gmail.com
+/bin/sh: 1: php: not found
+/bin/sh: 1: php: not found
+/bin/sh: 1: php: not found
+/bin/sh: 1: php: not found
+/bin/sh: 1: php: not found
+Error al conectar con la base de datos: could not find driverError al conectar con la base de datos: could not find driverError al conectar con la base de datos: could not find driverError al conectar con la base de datos: could not find driverError al conectar con la base de datos: could not find driver
