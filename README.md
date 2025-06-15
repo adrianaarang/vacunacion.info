@@ -1,103 +1,102 @@
-# vacunacion.info
+<h1 align="center">💉 vacunacion.info</h1>
 
-Plataforma web para el seguimiento del calendario vacunal infantil en España. Permite a madres y padres registrar a sus hijos, recibir recordatorios personalizados según edad y comunidad autónoma, y acceder a información oficial sobre vacunas.
+<p align="center">Plataforma web para gestionar el calendario vacunal infantil en España</p>
 
-## Tecnologías utilizadas
+<p align="center">
+  <img src="https://img.shields.io/badge/Estado-En%20producción-brightgreen" alt="Estado">
+  <img src="https://img.shields.io/badge/Versión-1.0-blue" alt="Versión">
+  <img src="https://img.shields.io/badge/Licencia-MIT-yellow" alt="Licencia">
+</p>
 
-- HTML5, CSS3, JavaScript
-- Bootstrap 5
-- PHP 8
-- MySQL (Base de datos alojada en AWS Lightsail)
-- Composer (para dependencias PHP)
-- Brevo (API para envío de correos electrónicos)
-- PWA (Progressive Web App)
-- Apache2
-- Git y GitHub
+---
 
-## Estructura principal
+## 📌 Tabla de contenidos
 
-- `/models/`: lógica de conexión a la base de datos y consultas
-- `/controllers/`: procesamiento de formularios, control de flujo y validaciones
-- `/views/`: vistas del frontend (páginas PHP + Bootstrap)
-- `/public/`: archivos públicos (imágenes, JS, CSS)
-- `/json/`: archivo `vacunas.json` con datos sobre vacunas
+- [🧰 Tecnologías utilizadas](#-tecnologías-utilizadas)
+- [📁 Estructura del proyecto](#-estructura-del-proyecto)
+- [✨ Funcionalidades destacadas](#-funcionalidades-destacadas)
+- [🚀 Despliegue en AWS Lightsail](#-despliegue-en-aws-lightsail)
+- [🌐 Dominio y HTTPS](#-dominio-y-https)
+- [👩‍💻 Contacto](#-contacto)
 
-## Funcionalidades destacadas
+---
 
-- Registro/Login con validación de datos
-- Gestión de hijos (con límite de edad 0-18 años)
-- Recordatorios por correo 30, 14 y 7 días antes de cada vacuna
-- Calendarios vacunales por comunidad (imágenes subidas desde el panel de administración)
-- Buscador con autocompletado de vacunas
-- Recuperación de contraseña por correo
-- Soporte para instalación como PWA
+## 🧰 Tecnologías utilizadas
 
-## Despliegue en AWS Lightsail
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
+![Composer](https://img.shields.io/badge/Composer-885630?logo=composer&logoColor=white)
+![Apache](https://img.shields.io/badge/Apache-D22128?logo=apache&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)
+![PWA](https://img.shields.io/badge/PWA-5A0FC8?logo=pwa&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?logo=amazonaws&logoColor=white)
+![Brevo](https://img.shields.io/badge/Brevo-009EF7?style=flat&logoColor=white)
 
-### Requisitos previos
+---
 
-- Instancia Bitnami (Apache + PHP + MySQL)
-- Acceso SSH (usando PuTTY o terminal con clave `.pem`)
-- Cliente SCP o WinSCP para transferir archivos
+## 📁 Estructura del proyecto
+
+- `models/` → conexión a la base de datos y queries
+- `controllers/` → lógica de validación y flujo
+- `views/` → páginas PHP + Bootstrap
+- `public/` → archivos estáticos (CSS, JS, imágenes)
+- `json/` → datos de vacunas (`vacunas.json`)
+
+---
+
+## ✨ Funcionalidades destacadas
+
+- ✔️ Registro/Login con validaciones
+- ✔️ Gestión de hijos (0-18 años)
+- ✔️ Envío de recordatorios personalizados por email (30, 14, 7 días)
+- ✔️ Calendario vacunal por comunidad
+- ✔️ Buscador con autocompletado
+- ✔️ Recuperación de contraseña por correo
+- ✔️ Instalación como app PWA
+
+---
+
+## 🚀 Despliegue en AWS Lightsail
+
+### Requisitos
+
+- Instancia Bitnami (Apache, PHP, MySQL)
+- Acceso por SSH (clave `.pem`)
+- WinSCP o SCP para transferencias
 
 ### Pasos
 
-1. **Subir archivos del proyecto**
-   - Comprimir en `.zip` el proyecto local (excepto `node_modules` y `.git`)
-   - Subir por SCP o WinSCP a `/opt/bitnami/apache2/htdocs/`
-   - Descomprimir en el servidor:  
-     ```bash
-     unzip TFG.zip -d /opt/bitnami/apache2/htdocs/
-     ```
+```bash
+# 1. Subir y descomprimir el proyecto
+scp -i tu_clave.pem TFG.zip bitnami@IP_PUBLICA:/opt/bitnami/apache2/htdocs/
+unzip TFG.zip
 
-2. **Configurar Apache para HTTPS**
-   - Asegurar que `httpd.conf` carga `mod_rewrite` y redirige HTTP a HTTPS:
-     ```apache
-     RewriteEngine On
-     RewriteCond %{HTTPS} !=on
-     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-     ```
-   - Forzar tráfico HTTPS por el puerto 443
+# 2. Redirigir a HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-3. **Conectar a base de datos remota**
-   - Exportar base local con `phpMyAdmin`
-   - Importar en AWS (vía `mysql` o `phpMyAdmin`)
-   - Editar `/models/BBDD.php` con credenciales de AWS:
-     ```php
-     $host = 'localhost';
-     $dbname = 'vacunacion.info';
-     $username = 'root';
-     $password = 'tu_contraseña_de_root';
-     ```
+# 3. Configurar base de datos
+# Edita models/BBDD.php con tus credenciales
+```
 
-4. **Composer (ya instalado)**
-   - Verificar instalación con `composer --version`
-   - Ejecutar `composer install` si se usan dependencias
+---
 
-5. **Permisos Apache para PWA y manifest**
-   - Asegurarse de que el MIME type `application/manifest+json` está configurado en `mime.types`
-   - Confirmar que `manifest.json` está bien enlazado en `<head>`
+## 🌐 Dominio y HTTPS
 
-### Exportación de la base de datos desde AWS
+El proyecto está disponible en:
 
-- Accede por SSH y usa:
-  ```bash
-  mysqldump -u root -p vacunacion.info > backup.sql
-  ```
+🔗 **https://vacunacion.info**  
+✔️ Tráfico forzado a HTTPS  
+✔️ Soporte para PWA (`manifest.json` configurado)
 
-- O usa `phpMyAdmin` accediendo a:
-  ```
-  http://IP_PUBLICA/phpmyadmin
-  ```
+---
 
-## Dominio y HTTPS
+## 👩‍💻 Desarrollo
 
-El proyecto está actualmente desplegado en:
-
-➡️ **https://vacunacion.info**
-
-Con tráfico forzado a HTTPS vía configuración de Apache.
-
-## Desarrollo.
-
-Proyecto desarrollado por Adriana Aránguez García.
+Desarrollado por **Adriana Aránguez García**  
+Proyecto final.
