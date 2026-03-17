@@ -1,97 +1,127 @@
-💉 vacunacion.info
+<h1 align="center">💉 vacunacion.info</h1>
 
-Plataforma web para gestionar el calendario vacunal infantil en España
+<p align="center">
+  <b>Gestión del calendario vacunal infantil en España</b><br>
+  Recordatorios automáticos · Personalización por comunidad · PWA
+</p>
 
-👉 Aplicación completa que permite a familias llevar el control de vacunas de sus hijos, con recordatorios automáticos y calendario adaptado por comunidad autónoma.
+<p align="center">
+  <a href="https://vacunacion.info">🌐 Ver demo</a> · 
+</p>
 
-🔗 Demo: https://vacunacion.info
+---
 
-🚀 ¿Qué problema resuelve?
+<h2>🚀 ¿Qué problema resuelve?</h2>
 
-En España, el calendario vacunal:
+<p>
+El seguimiento del calendario vacunal en España es complejo debido a:
+</p>
 
-cambia según la comunidad autónoma
+<ul>
+  <li>Diferencias entre comunidades autónomas</li>
+  <li>Falta de recordatorios centralizados</li>
+  <li>Dificultad para mantener un control actualizado</li>
+</ul>
 
-es difícil de seguir para familias
+<h3>👨‍👩‍👧 Para familias</h3>
+<ul>
+  <li>Evita olvidos mediante recordatorios automáticos</li>
+  <li>Permite adaptar el calendario al cambiar de comunidad</li>
+  <li>Visualización completa hasta los 18 años</li>
+</ul>
 
-no tiene recordatorios centralizados
+<h3>🏥 Para personal sanitario</h3>
+<ul>
+  <li>Registro y consulta de vacunas a nivel nacional</li>
+  <li>Verificación rápida del estado vacunal</li>
+  <li>Mejora de la continuidad asistencial</li>
+</ul>
 
-👉 Esta app soluciona eso automatizando el seguimiento y avisando por email antes de cada vacuna.
+---
 
-✨ Funcionalidades principales
+<h2>✨ Funcionalidades</h2>
 
-👶 Gestión de hijos (0–18 años)
+<ul>
+  <li>👶 Gestión de hijos (0–18 años)</li>
+  <li>📅 Calendario vacunal por comunidad</li>
+  <li>📧 Recordatorios automáticos (30, 14, 7 días)</li>
+  <li>🔐 Autenticación (login, registro, recuperación)</li>
+  <li>🔎 Buscador con autocompletado</li>
+  <li>📱 Instalación como PWA</li>
+</ul>
 
-📅 Calendario vacunal por comunidad autónoma
+<p><b>Panel sanitario:</b></p>
+<ul>
+  <li>Registro de vacunas</li>
+  <li>Actualización del calendario</li>
+  <li>Eliminación de vacunas obsoletas</li>
+</ul>
 
-📧 Recordatorios automáticos (30, 14 y 7 días antes)
+---
 
-🔐 Sistema de autenticación (registro/login + recuperación)
+<h2>🧰 Tecnologías</h2>
 
-🔎 Buscador con autocompletado
+<p>
+<b>Frontend:</b> HTML5 · CSS3 · JavaScript · Bootstrap<br>
+<b>Backend:</b> PHP<br>
+<b>Base de datos:</b> MySQL<br>
+<b>Arquitectura:</b> MVC<br>
+<b>Infraestructura:</b> AWS Lightsail · Apache<br>
+<b>Otros:</b> Composer · Brevo · PWA
+</p>
 
-📱 Instalable como app (PWA)
+---
 
-🧰 Tecnologías
+<h2>🏗️ Arquitectura</h2>
 
-Frontend: HTML5, CSS3, JavaScript, Bootstrap
-
-Backend: PHP
-
-Base de datos: MySQL
-
-Arquitectura: MVC
-
-Infraestructura: AWS Lightsail + Apache
-
-Otros: Composer, Brevo (emails), PWA
-
-🏗️ Arquitectura
-models/       → acceso a datos (MySQL)
+<pre>
+models/       → acceso a datos
 controllers/  → lógica de negocio
-views/        → interfaz (PHP + Bootstrap)
-public/       → assets (CSS, JS, imágenes)
+views/        → interfaz
+public/       → assets
 json/         → datos de vacunas
-🚀 Despliegue
+</pre>
 
-Aplicación desplegada en AWS Lightsail usando stack Bitnami (Apache + PHP + MySQL).
+---
 
-Incluye:
+<h2>🚀 Despliegue</h2>
 
-🔐 Redirección automática a HTTPS
+<ul>
+  <li>Servidor en AWS Lightsail (Bitnami)</li>
+  <li>Redirección automática a HTTPS</li>
+  <li>Dominio propio configurado</li>
+  <li>Despliegue mediante SCP</li>
+</ul>
 
-🌐 Dominio propio configurado
+---
 
-📦 Subida por SCP
+<h2>📸 Capturas</h2>
 
-📸 Capturas 
+<p align="center">
+  <img src="screenshots/login.jpg" width="600"><br><br>
+  <img src="screenshots/funcionalidadUsuario.jpg" width="600"><br><br>
+  <img src="screenshots/paneladmin.jpg" width="600"><br><br>
+  <img src="screenshots/calendario.jpg" width="600">
+</p>
 
-👉 Login
-![Login](screenshots/login.jpg)
+---
 
-👉 Panel de usuario
+<h2>🧠 Aprendizajes</h2>
 
-![Panel usuario](screenshots/funcionalidadUsuario.jpg)
+<ul>
+  <li>Arquitectura MVC desde cero</li>
+  <li>Autenticación y sesiones en PHP</li>
+  <li>Envío de emails automatizados</li>
+  <li>Despliegue en AWS</li>
+  <li>Configuración PWA</li>
+</ul>
 
+---
 
-👉 Panel de administrador
+<h2>👩‍💻 Autor</h2>
 
-![Panel administrador](screenshots/paneladmin.jpg)
-
-🧠 Aprendizajes clave
-
-Implementación de arquitectura MVC desde cero
-
-Gestión de autenticación y sesiones en PHP
-
-Integración de envío de emails automatizados
-
-Despliegue real en AWS con servidor Apache
-
-Configuración de PWA
-
-👩‍💻 Autor
-
-Adriana Aránguez García
-LinkedIn
- | GitHub
+<p>
+<b>Adriana Aránguez García</b><br>
+🔗 <a href="https://www.linkedin.com/in/adriana-aranguez">LinkedIn</a><br>
+💻 <a href="https://github.com/adrianaarang">GitHub</a>
+</p>
