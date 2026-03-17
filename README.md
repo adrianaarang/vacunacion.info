@@ -67,10 +67,11 @@ Incluye:
 📸 Capturas 
 
 👉 Login
+![Login](screenshots/login.png)
 
+👉 Panel de usuario
 
-👉 Dashboard
-👉 Calendario
+👉 Panel de administrador
 
 🧠 Aprendizajes clave
 
