@@ -10,8 +10,8 @@
   <a href="https://vacunacion.info">
     <img src="https://img.shields.io/badge/🌐%20Demo-vacunacion.info-blue?style=for-the-badge">
   </a>
-  <a href="https://www.linkedin.com/posts/adriana-aranguez_vacunacioninfo-es-una-aplicaci%C3%B3n-web-que-activity-7398157803284221952-alLr">
-    <img src="https://img.shields.io/badge/🎥%20Video-Demo-LinkedIn-blue?style=for-the-badge">
+  <a href="https://drive.google.com/file/d/12Dz6CHrXi_jIEx4uxA-nLytNDYiIeGBs/view?usp=drive_linkV">
+    <img src="https://img.shields.io/badge/🎥%20Video-Demo-GoogleDrive-red?style=for-the-badge">
   </a>
 </p>
 
@@ -133,6 +133,7 @@ json/         → datos de vacunas
   <img src="screenshots/login.jpg" width="700"><br><br>
   <img src="screenshots/funcionalidadUsuario.jpg" width="700"><br><br>
   <img src="screenshots/paneladmin.jpg" width="700"><br><br>
+  <img src="screenshots/calendario.jpg" width="700">
 </p>
 
 ---
@@ -173,3 +174,4 @@ json/         → datos de vacunas
 </p>
 
 ---
+
