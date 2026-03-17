@@ -71,7 +71,7 @@ Incluye:
 
 👉 Panel de usuario
 
-![Panel usuario](screenshots/fundacionalidadUsuario.jpg)
+![Panel usuario](screenshots/funcionalidadUsuario.jpg)
 
 
 👉 Panel de administrador
