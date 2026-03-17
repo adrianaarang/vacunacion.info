@@ -103,8 +103,8 @@ El sistema permite gestionar el historial vacunal de menores y automatizar recor
   <li>Personalización de mensajes según usuario</li>
   <li>Uso de API Key para autenticación segura</li>
   <li>Control de errores en el envío</li>
-  <li>Registro de logs de emails enviados</li>
-  <li>Prevención de duplicados en envíos</li>
+  <li>Registro de logs del estado de los envíos (éxito / error)</li>
+  <li>Trazabilidad de recordatorios para control de duplicados y auditoría</li>
 </ul>
 
 <p>
