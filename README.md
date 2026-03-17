@@ -96,11 +96,13 @@ El sistema permite gestionar el historial vacunal de menores y automatizar recor
   <li>Envío automático de emails en función de fechas de vacunación</li>
   <li>Personalización de mensajes según usuario</li>
   <li>Uso de API Key para autenticación segura</li>
-  <li>Control básico de errores en el envío</li>
+  <li>Control de errores en el envío</li>
+  <li>Registro de logs de emails enviados</li>
+  <li>Prevención de duplicados en envíos</li>
 </ul>
 
 <p>
-Este sistema permite una comunicación fiable y escalable con los usuarios.
+Este sistema permite una comunicación fiable, escalable y orientada a eventos.
 </p>
 
 ---
@@ -138,6 +140,51 @@ json/         → datos estructurados de vacunas
 
 ---
 
+<h2>🔐 Seguridad</h2>
+
+<ul>
+  <li>Almacenamiento seguro de contraseñas mediante hashing</li>
+  <li>Validación y sanitización de inputs en cliente y servidor</li>
+  <li>Protección frente a SQL Injection</li>
+  <li>Prevención de ataques XSS</li>
+  <li>Gestión segura de sesiones de usuario</li>
+</ul>
+
+---
+
+<h2>🧪 Testing</h2>
+
+<ul>
+  <li>Validación de formularios</li>
+  <li>Verificación de flujos de autenticación</li>
+  <li>Pruebas de envío de recordatorios</li>
+  <li>Comprobación de interacción entre módulos</li>
+</ul>
+
+<p>
+Actualmente no se han implementado tests automatizados, pero se plantea como mejora futura.
+</p>
+
+---
+
+<h2>📊 Diagramas del sistema</h2>
+
+<p>
+El proyecto ha sido diseñado mediante modelado UML:
+</p>
+
+<ul>
+  <li>Diagrama de casos de uso</li>
+  <li>Diagrama de clases</li>
+  <li>Modelo entidad-relación (base de datos)</li>
+</ul>
+
+<p>
+Estos diagramas reflejan la estructura del sistema, las relaciones entre entidades y el flujo de interacción.
+</p>
+
+---
+
 <h2>🚀 Despliegue</h2>
 
 <ul>
@@ -166,7 +213,6 @@ Configurar servidor local (XAMPP / Apache), base de datos MySQL y variables de e
   <img src="screenshots/login.jpg" width="700"><br><br>
   <img src="screenshots/funcionalidadUsuario.jpg" width="700"><br><br>
   <img src="screenshots/paneladmin.jpg" width="700"><br><br>
-  <img src="screenshots/calendario.jpg" width="700">
 </p>
 
 ---
@@ -180,6 +226,26 @@ Configurar servidor local (XAMPP / Apache), base de datos MySQL y variables de e
   <li>Automatización de procesos (emails programados)</li>
   <li>Despliegue en entorno cloud (AWS)</li>
   <li>Desarrollo de aplicaciones PWA</li>
+</ul>
+
+---
+
+<h2>🚧 Mejoras futuras</h2>
+
+<ul>
+  <li>Desarrollo de API REST desacoplada</li>
+  <li>Migración a frontend moderno (React / Vue)</li>
+  <li>Notificaciones push</li>
+  <li>Tests automatizados</li>
+  <li>Monitorización y logs avanzados</li>
+</ul>
+
+<h3>🌍 Nueva línea de desarrollo</h3>
+
+<ul>
+  <li>Extensión a vacunación internacional (viajeros)</li>
+  <li>Recomendaciones según destino</li>
+  <li>Integración con organismos sanitarios (OMS, CDC)</li>
 </ul>
 
 ---
@@ -206,5 +272,3 @@ Configurar servidor local (XAMPP / Apache), base de datos MySQL y variables de e
   <img src="https://img.shields.io/github/repo-size/adrianaarang/vacunacion.info?style=for-the-badge">
   <img src="https://img.shields.io/github/issues/adrianaarang/vacunacion.info?style=for-the-badge">
 </p>
-
----
