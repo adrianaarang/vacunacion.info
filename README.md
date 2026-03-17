@@ -243,10 +243,8 @@ Configurar servidor local (XAMPP / Apache), base de datos MySQL y variables de e
   <li>Migración a frontend moderno (React / Vue)</li>
   <li>Notificaciones push</li>
   <li>Tests automatizados</li>
-  <li>Monitorización y logs avanzados</li>
+  <li>Creación de un perfil para vacunación de viajeros</li>
 </ul>
-
-<h3>🌍 Nueva línea de desarrollo</h3>
 
 <ul>
   <li>Extensión a vacunación internacional (viajeros)</li>
