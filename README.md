@@ -71,7 +71,12 @@ Incluye:
 
 👉 Panel de usuario
 
+![Panel usuario](screenshots/fundacionalidadesUsuario.jpg)
+
+
 👉 Panel de administrador
+
+![Panel administrador](screenshots/paneladmin.jpg)
 
 🧠 Aprendizajes clave
 
