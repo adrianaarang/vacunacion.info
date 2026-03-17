@@ -67,7 +67,7 @@ Incluye:
 📸 Capturas 
 
 👉 Login
-![Login](screenshots/login.png)
+screenshots/login.jpg
 
 👉 Panel de usuario
 
