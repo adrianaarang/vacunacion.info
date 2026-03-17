@@ -1,6 +1,12 @@
 <h1 align="center">💉 vacunacion.info</h1>
 
 <p align="center">
+  <b>Stack:</b> PHP · MySQL · JavaScript · AWS<br>
+  <b>Arquitectura:</b> MVC · API externa (Brevo)<br>
+  <b>Funcionalidades clave:</b> Autenticación · Emails automáticos · Panel admin
+</p>
+
+<p align="center">
   <b>Gestión inteligente del calendario vacunal infantil en España</b><br>
   Recordatorios automáticos · Personalización por comunidad · PWA
 </p>
