@@ -133,7 +133,6 @@ json/         → datos de vacunas
   <img src="screenshots/login.jpg" width="700"><br><br>
   <img src="screenshots/funcionalidadUsuario.jpg" width="700"><br><br>
   <img src="screenshots/paneladmin.jpg" width="700"><br><br>
-  <img src="screenshots/calendario.jpg" width="700">
 </p>
 
 ---
