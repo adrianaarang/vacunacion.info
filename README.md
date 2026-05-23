@@ -12,24 +12,22 @@
 </p>
 
 <p align="center">
-  <!-- Demo y vídeo -->
   <a href="https://vacunacion.info">
     <img src="https://img.shields.io/badge/🌐%20Demo-vacunacion.info-blue?style=for-the-badge">
   </a>
-  <a href="https://drive.google.com/file/d/12Dz6CHrXi_jIEx4uxA-nLytNDYiIeGBs/view?usp=drive_linkV">
-    <img src="https://img.shields.io/badge/🎥%20Video-Demo-GoogleDrive-red?style=for-the-badge">
+  <a href="https://drive.google.com/file/d/12Dz6CHrXi_jIEx4uxA-nLytNDYiIeGBs/view?usp=drive_link">
+    <img src="https://img.shields.io/badge/🎥%20Vídeo-Demo-red?style=for-the-badge">
   </a>
 </p>
 
 <p align="center">
-  <!-- Estado del proyecto -->
   <img src="https://img.shields.io/badge/Estado-Completo-success?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Versión-1.0.0-blue?style=for-the-badge">
   <img src="https://img.shields.io/badge/Última_actualización-2026-blue?style=for-the-badge">
   <img src="https://img.shields.io/badge/Licencia-MIT-yellow?style=for-the-badge">
 </p>
 
 <p align="center">
-  <!-- Tecnologías -->
   <img src="https://img.shields.io/badge/Frontend-HTML5-orange?style=for-the-badge&logo=html5">
   <img src="https://img.shields.io/badge/Frontend-CSS3-blue?style=for-the-badge&logo=css3">
   <img src="https://img.shields.io/badge/Frontend-JavaScript-yellow?style=for-the-badge&logo=javascript">
@@ -42,219 +40,247 @@
 
 ---
 
-<h2>🚀 Descripción</h2>
+## 🚀 Descripción
 
-<p>
-<code>vacunacion.info</code> es una aplicación web diseñada para facilitar el seguimiento del calendario vacunal infantil en España, adaptándose automáticamente a la comunidad autónoma del usuario.
-</p>
+`vacunacion.info` es una aplicación web diseñada para facilitar el seguimiento del calendario vacunal infantil en España, adaptándose automáticamente a la comunidad autónoma del usuario.
 
-<p>
 El sistema permite gestionar el historial vacunal de menores y automatizar recordatorios, mejorando la adherencia a los calendarios oficiales y reduciendo olvidos.
-</p>
 
 ---
 
-<h2>🎯 Problema que resuelve</h2>
+## 🎯 Problema que resuelve
 
-<ul>
-  <li>Diferencias entre calendarios vacunales por comunidad autónoma</li>
-  <li>Falta de recordatorios centralizados y automatizados</li>
-  <li>Dificultad para mantener un seguimiento actualizado</li>
-</ul>
+- Diferencias entre calendarios vacunales por comunidad autónoma
+- Falta de recordatorios centralizados y automatizados
+- Dificultad para mantener un seguimiento actualizado
 
-<h3>👨‍👩‍👧 Para familias</h3>
-<ul>
-  <li>Seguimiento completo de vacunación (0–18 años)</li>
-  <li>Recordatorios automáticos antes de cada vacuna</li>
-  <li>Adaptación dinámica al cambiar de comunidad</li>
-</ul>
+### 👨‍👩‍👧 Para familias
+- Seguimiento completo de vacunación (0–18 años)
+- Recordatorios automáticos antes de cada vacuna
+- Adaptación dinámica al cambiar de comunidad
 
-<h3>🏥 Para profesionales sanitarios</h3>
-<ul>
-  <li>Consulta del estado vacunal</li>
-  <li>Registro y actualización de vacunas</li>
-  <li>Mejora de la continuidad asistencial</li>
-</ul>
+### 🏥 Para profesionales sanitarios
+- Consulta del estado vacunal
+- Registro y actualización de vacunas
+- Mejora de la continuidad asistencial
 
 ---
 
-<h2>✨ Funcionalidades principales</h2>
+## ✨ Funcionalidades principales
 
-<ul>
-  <li>👶 Gestión de perfiles de menores</li>
-  <li>📅 Calendario vacunal personalizado por comunidad</li>
-  <li>📧 Sistema de recordatorios automatizados (30, 14 y 7 días)</li>
-  <li>🔐 Sistema completo de autenticación (login, registro, recuperación)</li>
-  <li>🔎 Buscador con autocompletado</li>
-  <li>📱 Instalación como Progressive Web App (PWA)</li>
-  <li>Panel de administración</li>
-  <li>Gestión de vacunas</li>
-  <li>Actualización de calendarios</li>
-  <li>Eliminación de registros obsoletos</li>
-</ul>
+- 👶 Gestión de perfiles de menores
+- 📅 Calendario vacunal personalizado por comunidad autónoma
+- 📧 Sistema de recordatorios automatizados (30, 14 y 7 días antes de cada vacuna)
+- 🔐 Sistema completo de autenticación (login, registro, recuperación de contraseña)
+- 🔎 Buscador con autocompletado
+- 📱 Instalación como Progressive Web App (PWA)
+- 🛠️ Panel de administración con gestión de vacunas, calendarios y usuarios
+- 🗑️ Eliminación segura de registros y cuentas
 
 ---
 
-<h2>📧 Sistema de notificaciones (API Brevo)</h2>
+## 📸 Demo
 
-<ul>
-  <li>Integración mediante peticiones HTTP desde el backend en PHP</li>
-  <li>Envío automático de emails en función de fechas de vacunación</li>
-  <li>Personalización de mensajes según usuario</li>
-  <li>Uso de API Key para autenticación segura</li>
-  <li>Control de errores en el envío</li>
-  <li>Registro de logs del estado de los envíos (éxito / error)</li>
-  <li>Trazabilidad de recordatorios para control de duplicados y auditoría</li>
-</ul>
 
-<p>
-Este sistema permite una comunicación fiable, escalable y orientada a eventos.
-</p>
 
----
+https://github.com/user-attachments/assets/a6325f44-f071-4320-856b-6a63691f4db8
 
-<h2>🧰 Stack tecnológico</h2>
 
-<ul>
-  <li><b>Frontend:</b> HTML5 · CSS3 · JavaScript · Bootstrap</li>
-  <li><b>Backend:</b> PHP (MVC)</li>
-  <li><b>Base de datos:</b> MySQL</li>
-  <li><b>Infraestructura:</b> AWS Lightsail · Apache</li>
-  <li><b>Otros:</b> Composer · Brevo (email API) · PWA</li>
-</ul>
+https://github.com/user-attachments/assets/0412e68c-6eac-4dc9-9515-d703ed957121
+
+
+
+https://github.com/user-attachments/assets/57db0d3b-8d57-464e-a0be-44bee92d0cd5
+
+
 
 ---
 
-<h2>🏗️ Arquitectura</h2>
+## 🧰 Stack tecnológico
 
-<pre>
-models/       → acceso a datos
-controllers/  → lógica de negocio
-views/        → interfaz de usuario
-public/       → assets y recursos públicos
-json/         → datos estructurados de vacunas
-</pre>
-
-<h2>⚙️ Decisiones técnicas</h2>
-
-<ul>
-  <li>Uso de MVC para mejorar mantenibilidad y escalabilidad</li>
-  <li>Integración con API externa (Brevo) para delegar el envío de emails</li>
-  <li>Implementación como PWA para mejorar accesibilidad móvil</li>
-  <li>Uso de AWS Lightsail para un despliegue sencillo y controlado</li>
-</ul>
+| Capa | Tecnología |
+|------|-----------|
+| Frontend | HTML5, CSS3, JavaScript, Bootstrap |
+| Backend | PHP (patrón MVC) |
+| Base de datos | MySQL |
+| Infraestructura | AWS Lightsail + Apache (Bitnami) |
+| Email | API Brevo (getbrevo/brevo-php ^2.0) |
+| Gestor de dependencias | Composer |
+| Otros | PWA (manifest + Service Worker) |
 
 ---
 
-<h2>🔐 Seguridad</h2>
+## 🏗️ Arquitectura y estructura del proyecto
 
-<ul>
-  <li>Almacenamiento seguro de contraseñas mediante hashing</li>
-  <li>Validación y sanitización de inputs en cliente y servidor</li>
-  <li>Protección frente a SQL Injection</li>
-  <li>Prevención de ataques XSS</li>
-  <li>Gestión segura de sesiones de usuario</li>
-</ul>
-
----
-
-<h2>🧪 Testing</h2>
-
-<ul>
-  <li>Validación de formularios</li>
-  <li>Verificación de flujos de autenticación</li>
-  <li>Pruebas de envío de recordatorios</li>
-  <li>Comprobación de interacción entre módulos</li>
-</ul>
-
-<p>
-Actualmente no se han implementado tests automatizados, pero se plantea como mejora futura.
-</p>
-
----
-
-<h2>📊 Diagramas del sistema</h2>
-
-<p>
-El proyecto ha sido diseñado mediante modelado UML:
-</p>
-
-<ul>
-  <li>Diagrama de casos de uso</li>
-  <li>Diagrama de clases</li>
-  <li>Modelo entidad-relación (base de datos)</li>
-</ul>
-
-<p>
-Estos diagramas reflejan la estructura del sistema, las relaciones entre entidades y el flujo de interacción.
-</p>
+```
+vacunacion.info/
+├── controllers/          → Lógica de negocio (procesarLogin, recordatorios, calendarios…)
+├── models/
+│   ├── BBDD.php          → Clase de conexión y operaciones con la base de datos (PDO)
+│   └── vacunas.json      → Datos estructurados de vacunas
+├── views/
+│   ├── *.php             → Vistas (home, panel_usuario, panel_admin, registro…)
+│   ├── javascript/       → Scripts del cliente
+│   ├── header.php        → Cabecera común
+│   ├── footer.php        → Pie de página común
+│   └── style.css         → Estilos globales
+├── includes/
+│   └── email_functions.php → Funciones de envío de email via Brevo
+├── logs/                 → Logs de errores y envíos de recordatorios
+├── vendor/               → Dependencias Composer (no subir al repositorio)
+├── vacunacion.info.sql   → Script de importación de la base de datos
+├── manifest.json         → Configuración PWA
+├── sw.js                 → Service Worker
+├── route.php             → Enrutador principal
+├── index.php             → Punto de entrada
+├── .htaccess             → Configuración Apache
+└── composer.json         → Definición de dependencias
+```
 
 ---
 
-<h2>🚀 Despliegue</h2>
+## ⚙️ Decisiones técnicas
 
-<ul>
-  <li>Servidor en AWS Lightsail (Bitnami + Apache)</li>
-  <li>Configuración de dominio propio</li>
-  <li>Redirección automática a HTTPS</li>
-  <li>Despliegue manual mediante SCP</li>
-</ul>
+- **MVC** para separar responsabilidades y facilitar mantenibilidad
+- **PDO** para acceso a la base de datos con protección frente a SQL Injection
+- **API Brevo** para delegar el envío de emails de forma fiable y escalable
+- **Cron job** para automatizar el envío de recordatorios sin intervención manual
+- **PWA** para mejorar la experiencia en dispositivos móviles
+- **AWS Lightsail** para un despliegue sencillo, controlado y con coste reducido
 
-<h2>💻 Ejecución local</h2>
+---
 
-<pre>
+## 📧 Sistema de notificaciones (API Brevo)
+
+- Integración mediante la librería oficial `getbrevo/brevo-php` desde PHP
+- Envío automático de emails 30, 14 y 7 días antes de cada vacuna
+- Personalización de mensajes según usuario y vacuna
+- Autenticación segura mediante variable de entorno `BREVO_API_KEY`
+- Control de errores en el envío con registro en logs
+- Trazabilidad de recordatorios para evitar duplicados y facilitar auditoría
+
+---
+
+## 🔐 Seguridad
+
+- Almacenamiento seguro de contraseñas mediante hashing (`password_hash`)
+- Validación y sanitización de inputs en cliente y servidor
+- Protección frente a SQL Injection mediante PDO con parámetros preparados
+- Prevención de ataques XSS
+- Gestión segura de sesiones PHP
+- API Key de Brevo almacenada como variable de entorno (nunca en el código)
+
+---
+
+## 💻 Instalación local
+
+### Requisitos previos
+
+- PHP 8.x
+- MySQL 8.x
+- Composer
+- Servidor local (XAMPP, Laravel Herd, MAMP, etc.)
+
+### Pasos
+
+```bash
+# 1. Clonar el repositorio
 git clone https://github.com/adrianaarang/vacunacion.info
 cd vacunacion.info
-</pre>
 
-<p>
-Configurar servidor local (XAMPP / Apache), base de datos MySQL y variables de entorno (API Key de Brevo).
-</p>
+# 2. Instalar dependencias PHP
+composer install
 
----
+# 3. Importar la base de datos
+mysql -u root -p < vacunacion.info.sql
 
-<h2>📸 Capturas</h2>
+# 4. Configurar la conexión a la base de datos
+# Editar models/BBDD.php con tus credenciales locales:
+#   private $cadena_conexion = 'mysql:dbname=vacunacion.info;host=localhost';
+#   private $usuario = 'root';
+#   private $password = '';
 
-<p align="center">
-  <img src="screenshots/login.jpg" width="700"><br><br>
-  <img src="screenshots/funcionalidadUsuario.jpg" width="700"><br><br>
-  <img src="screenshots/paneladmin.jpg" width="700"><br><br>
-</p>
+# 5. Configurar la variable de entorno para Brevo
+export BREVO_API_KEY="tu_api_key_de_brevo"
+# O añadirla en la configuración de tu servidor virtual (Apache/Nginx)
 
----
-
-<h2>🧠 Aprendizajes</h2>
-
-<ul>
-  <li>Diseño de arquitectura MVC desde cero</li>
-  <li>Implementación de autenticación y gestión de sesiones</li>
-  <li>Integración con APIs externas (Brevo)</li>
-  <li>Automatización de procesos (emails programados)</li>
-  <li>Despliegue en entorno cloud (AWS)</li>
-  <li>Desarrollo de aplicaciones PWA</li>
-</ul>
+# 6. Arrancar el servidor local y acceder a:
+#    http://localhost/vacunacion.info
+```
 
 ---
 
-<h2>🚧 Mejoras futuras</h2>
+## 🚀 Despliegue en producción (AWS Lightsail)
 
-<ul>
-  <li>Desarrollo de API REST desacoplada</li>
-  <li>Migración a frontend moderno (React / Vue)</li>
-  <li>Notificaciones push</li>
-  <li>Tests automatizados</li>
-  <li>Creación de un perfil para vacunación de viajeros</li>
-</ul>
+- Servidor en AWS Lightsail (Bitnami + Apache)
+- Dominio propio configurado con DNS
+- Redirección automática a HTTPS mediante `.htaccess`
+- Despliegue mediante SCP al directorio `/opt/bitnami/apache2/htdocs/`
+- Variable de entorno `BREVO_API_KEY` configurada en el VirtualHost de Apache
 
-<ul>
-  <li>Extensión a vacunación internacional (viajeros)</li>
-  <li>Recomendaciones según destino</li>
-  <li>Integración con organismos sanitarios (OMS, CDC)</li>
-</ul>
+### Configuración del cron job de recordatorios
+
+```bash
+# Ejecutar diariamente a las 9:00 AM
+0 9 * * * php /opt/bitnami/apache2/htdocs/TFG/controllers/recordatorios.php >> /opt/bitnami/apache2/htdocs/TFG/controllers/recordatorios_cron.log 2>&1
+```
 
 ---
 
-<h2>👩‍💻 Autor</h2>
+## 🧪 Testing
+
+Las pruebas realizadas han sido de tipo manual:
+
+- Validación de formularios en cliente y servidor
+- Verificación de flujos completos de autenticación (registro, login, recuperación)
+- Pruebas de envío de recordatorios con distintos escenarios de fecha
+- Comprobación de interacción entre módulos (calendario ↔ comunidad ↔ recordatorios)
+- Verificación del comportamiento en distintos dispositivos (PWA)
+
+> La implementación de tests automatizados (PHPUnit) se plantea como mejora futura.
+
+---
+
+## 📊 Diagramas del sistema
+
+El proyecto ha sido diseñado con modelado UML:
+
+- Diagrama de casos de uso
+- Diagrama de clases
+- Modelo entidad-relación (base de datos)
+
+Estos diagramas reflejan la estructura del sistema, las relaciones entre entidades y el flujo de interacción entre módulos.
+
+---
+
+## 🧠 Aprendizajes
+
+- Diseño e implementación de arquitectura MVC desde cero en PHP
+- Autenticación completa con gestión de sesiones y recuperación de contraseña
+- Integración con APIs externas (Brevo) usando librería oficial
+- Automatización de procesos con cron jobs
+- Despliegue en entorno cloud real (AWS Lightsail)
+- Desarrollo de aplicaciones PWA con Service Worker y manifest
+
+---
+
+## 🚧 Mejoras futuras
+
+**Técnicas:**
+- Desarrollo de API REST desacoplada del frontend
+- Migración a framework moderno (React / Vue)
+- Notificaciones push (Web Push API)
+- Tests automatizados con PHPUnit
+- Uso de variables de entorno mediante `.env` (vlucas/phpdotenv)
+
+**Funcionales:**
+- Perfil para vacunación de viajeros internacionales
+- Recomendaciones según destino con integración OMS / CDC
+- Extensión a calendarios de vacunación de adultos
+
+---
+
+## 👩‍💻 Autora
 
 <p align="center">
   <b>Adriana Aránguez García</b><br><br>
@@ -268,7 +294,7 @@ Configurar servidor local (XAMPP / Apache), base de datos MySQL y variables de e
 
 ---
 
-<h2>📊 Métricas del repositorio</h2>
+## 📊 Métricas del repositorio
 
 <p align="center">
   <img src="https://img.shields.io/github/languages/top/adrianaarang/vacunacion.info?style=for-the-badge">
